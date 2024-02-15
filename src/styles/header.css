@@ -1,0 +1,23 @@
+@layer component {
+    .header {
+       
+    }
+  .flex-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .flex-form {
+    flex: 1;
+  }
+  .flex-categories {
+    gap: 10px;
+  }
+  .search-bg {
+    padding-inline: 15px;
+    padding-block: 10px;
+    background-color: rgb(204, 204, 204);
+  }
+}
+

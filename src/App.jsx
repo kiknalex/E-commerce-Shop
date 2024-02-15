@@ -1,15 +1,12 @@
 import {Routes, Route, Link, Outlet} from 'react-router-dom';
-
-import './App.css'
+import Header from './components/Header/Header';
+import './index.css'
 
 function App() {
 
   return (
-    <div>
-      <h1>Hi test</h1>
-      <Routes>
-        <Route></Route>
-      </Routes>
+      <div>
+      <Header />
       </div>
   )
 }

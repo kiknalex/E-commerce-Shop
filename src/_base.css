@@ -14,10 +14,17 @@
         margin: 0;
     }
 
+    input {
+        all: unset;
+    }
+
     input, textarea, button, select {
         font: inherit;
     }
-
+    a, button {
+        all: unset;
+        cursor: pointer;
+    }
     
     .ax-button {
         all: unset;
