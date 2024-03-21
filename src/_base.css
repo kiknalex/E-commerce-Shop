@@ -17,6 +17,9 @@
     input {
         all: unset;
     }
+    h2 {
+        margin: 0;
+    }
 
     input, textarea, button, select {
         font: inherit;

@@ -1,5 +1,11 @@
 @layer component {
     .btn-pill {
-        border-radius: 20px;
+        border-radius: 30px;
+        padding-inline: 45px;
+        padding-block: 10px;
+    }
+    .btn-black {
+        color: white;
+        background-color: black;
     }
 }
