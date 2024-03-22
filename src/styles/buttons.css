@@ -1,11 +1,19 @@
 @layer component {
-    .btn-pill {
-        border-radius: 30px;
-        padding-inline: 45px;
-        padding-block: 10px;
-    }
-    .btn-black {
-        color: white;
-        background-color: black;
-    }
+  .btn-pill {
+    border-radius: 30px;
+    padding-inline: 45px;
+    padding-block: 10px;
+  }
+  .btn-black {
+    color: white;
+    background-color: black;
+  }
+  .btn-search {
+    width: 24px;
+    height: 24px;
+  }
+
+  .btn-profile {
+    margin-inline: 5px;
+  }
 }

@@ -1,9 +1,9 @@
 const HeaderProfileBtn = () => {
 
     return (
-        <div>
-            <button>cart</button>
-            <button>profile</button>
+        <div className="profile-btn-flex">
+            <button className="btn-profile btn-search"><img src="/cart.png" alt="cart" /></button>
+            <button className="btn-profile btn-search"><img src="/profile.png" alt="profile" /></button>
         </div>
     )
 }

@@ -10,14 +10,21 @@
   }
   .flex-form {
     flex: 1;
+    display: flex;
+    gap: 10px;
   }
   .flex-categories {
     gap: 10px;
   }
   .search-bg {
+    border-radius: 30px;
     padding-inline: 15px;
     padding-block: 10px;
-    background-color: rgb(204, 204, 204);
+    background-color: #F0F0F0;
+  }
+  .profile-btn-flex {
+    display: flex;
+    align-items: center;
   }
 }
 

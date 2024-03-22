@@ -5,7 +5,7 @@ const Header = () => {
 
     return (
         <header className="container flex-header header">
-            <h1><a href="#">SHOP.CO</a></h1>
+            <h1 className="title"><a href="#">SHOP.CO</a></h1>
             <HeaderCategories />
             <SearchBar />
             <HeaderProfileBtn />
