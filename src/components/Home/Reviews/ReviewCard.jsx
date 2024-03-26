@@ -4,7 +4,7 @@ const ReviewCard = ({ text, firstName, lastNameLetter }) => {
   return (
     <div className="review-card">
       <div className="rating">
-        <p className="sr-only">rating is 5 out of 5</p>
+        <p className="sr-only">Rating is 5 out of 5</p>
         <i className="fa-solid fa-star"></i>
         <i className="fa-solid fa-star"></i>
         <i className="fa-solid fa-star"></i>

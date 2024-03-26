@@ -1,106 +1,30 @@
 @layer component {
-    .flex-home {
-        display: flex;
-        height: max(80vh, 100px);
-        margin-top: 50px;
-    }
-    .home-intro-description {
-        width: 50%;
-        padding-right: 20px;
-    }
-    .intro-bg {
-        background-image: url("/introImage.jpg");
-        
-        background-size: cover;
-        background-repeat: no-repeat;
-        
-        min-width: 500px;
-        width: 50%;
-        
-    }
+  .flex-home {
+    display: flex;
+    height: max(80vh, 100px);
+    margin-top: 50px;
+  }
 
-    .img-brand {
-        color: white;
-    }
+  .home-category {
+    margin-top: 60px;
+  }
+  .category-heading {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .items-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
 
-    .company-stats-flex {
-        display: flex;
-        gap: 10px;
-        margin-top: 20px;
-    }
-    .company-stats-flex > div > p {
-        margin-block: 0;
-    }
-    .company-stats-flex > div:not(:last-child)  {
-        padding-right: 10px;
-        border-right: 1px solid rgba(0, 0, 0, 0.171);
-    }
-    .brand-breakline {
-        background-color: black;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-inline: 60px;
-        padding-block: 30px;
-    }
-    
-    .home-category {
-        margin-top: 60px;
-    }
-    .category-heading {
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .items-line {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-    }
-    
-    .flex-category-squares {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    .category-square-img {
-        width: 300px;
-        height: auto;
-    }
-
-  
-    .review-card {
-        width: 400px;
-        height: 240px;
-        border: 1px rgb(204, 204, 204) solid;
-        border-radius: 15px;
-        padding-inline: 20px;
-        padding-block: 10px;  
-        flex-shrink: 0;
-    }
-    .review-card:not(:first-child) {
-        margin-left: 20px;
-    }
-
-    .fa-star {
-        color: orange;
-        padding-inline: 2px;
-    }
-    
-    .fa-circle-check {
-        color: #30cf65;
-    }
-    .reviews-container {
-        overflow-x: hidden;
-    }
-    .slider-buttons {
-        display: flex;
-        align-items: center;
-    }
-    .heading-carousel-container {
-        display: flex;
-        justify-content: space-between;
-    }
-    .heading-carousel {
-        text-transform: uppercase;
-    }
+  .flex-category-squares {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .category-square-img {
+    width: 20vw;
+    height: auto;
+  }
 }

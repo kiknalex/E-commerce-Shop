@@ -30,9 +30,11 @@ const ReviewsCarousel = () => {
         <h2 className="heading-carousel title">Our Happy Customers</h2>
         <div className="slider-buttons">
           <PrevButton
+          aria-label="Previous review"
             onClick={usePrevNextButtons(emblaApi).onPrevButtonClick}
           />
           <NextButton
+          aria-label="Next review"
             onClick={usePrevNextButtons(emblaApi).onNextButtonClick}
           />
         </div>
