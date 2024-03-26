@@ -1,12 +1,14 @@
 @layer component {
     .header {
-       
+       position: relative;
+       margin-top: 20px;
     }
   .flex-header {
     display: flex;
     gap: 20px;
-    align-items: center;
+     align-items: center;
     justify-content: space-between;
+
   }
   .flex-form {
     flex: 1;
@@ -14,7 +16,14 @@
     gap: 10px;
   }
   .flex-categories {
-    gap: 10px;
+    height: 60px;
+    gap: 0px;
+  }
+  .flex-categories > li {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-inline: 10px;
+    align-self: flex-start;
   }
   .search-bg {
     border-radius: 30px;

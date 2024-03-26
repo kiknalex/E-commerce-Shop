@@ -1,7 +1,33 @@
-const Dropdown = () => {
-    return (
-        <div>hello</div>
-    )
-}
+const Dropdown = ({ dropdownShow, handleMouseIn, handleMouseOut }) => {
+  return (
+    <div
+      className={`dropdown-container ${dropdownShow}`}
+      
+    >
+        <div className={`dropdown-sections-flex ${dropdownShow}`}>
+      <ul className="dropdown-items-flex">
+        <li>Shoes</li>
+        <li>T-shirts</li>
+        <li>Jackets</li>
+      </ul>
+      <ul className="dropdown-items-flex">
+        <li>Shoes</li>
+        <li>T-shirts</li>
+        <li>Jackets</li>
+      </ul>
+      <ul className="dropdown-items-flex">
+        <li>Shoes</li>
+        <li>T-shirts</li>
+        <li>Jackets</li>
+      </ul>
+      <ul className="dropdown-items-flex">
+        <li>Shoes</li>
+        <li>T-shirts</li>
+        <li>Jackets</li>
+      </ul>
+      </div>
+    </div>
+  );
+};
 
 export default Dropdown;
