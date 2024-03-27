@@ -2,8 +2,8 @@ import CategorySquare from "./CategorySquare";
 
 const PickCategorySquare = () => {
   return (
-    <div className="container">
-      <h2 className="category-heading">Pick featured collections</h2>
+    <div className="container category-squares-container">
+      <h2 className="category-heading title">Pick featured collections</h2>
       <div className="flex-category-squares">
         <CategorySquare category={"Casual"} imgSrc={"/casual.jpg"} />
         <CategorySquare category={"Formal"} imgSrc={"/formal.jpg"} />

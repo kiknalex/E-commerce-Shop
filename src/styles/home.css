@@ -9,6 +9,7 @@
     margin-top: 60px;
   }
   .category-heading {
+    margin-block: 30px;
     text-transform: uppercase;
     text-align: center;
   }
@@ -22,9 +23,21 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    width: 100%;
+  }
+  .bg-img {
+    flex: 1;
   }
   .category-square-img {
-    width: 20vw;
+    width: 100%;
     height: auto;
+    border-radius: 20px;
+  }
+  .category-squares-container {
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: #F0F0F0;
+    border-radius: 30px;
   }
 }

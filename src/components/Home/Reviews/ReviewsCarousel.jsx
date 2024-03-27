@@ -25,7 +25,7 @@ const ReviewsCarousel = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container reviews-container">
       <div className="heading-carousel-container">
         <h2 className="heading-carousel title">Our Happy Customers</h2>
         <div className="slider-buttons">
@@ -39,7 +39,7 @@ const ReviewsCarousel = () => {
           />
         </div>
       </div>
-      <div ref={emblaRef} className="reviews-container">
+      <div ref={emblaRef} className="reviews-carousel-container">
         <div className="embla__container">
           {fakeReviews.map((review, id) => (
             <ReviewCard

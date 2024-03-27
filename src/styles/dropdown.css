@@ -28,14 +28,15 @@
   .dropdown-enter.active {
     border-bottom: 2px solid #000000;
   }
-    
-    
+
   .dropdown-items-flex {
     display: flex;
     flex-direction: column;
     width: max-content;
   }
   .dropdown-sections-flex {
+    margin-top: 50px;
+    margin-inline: auto;
     display: flex;
     gap: 20px;
     opacity: 0;
@@ -49,6 +50,4 @@
     transition: transform 0.3s ease, opacity 0.2s linear;
     transition-delay: 0.2s;
   }
-  
-  
 }

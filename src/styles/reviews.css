@@ -1,4 +1,8 @@
 @layer component {
+  .reviews-container {
+    margin-top: 40px;
+  }
+
   .review-card {
     width: 400px;
     height: 240px;
@@ -20,7 +24,8 @@
   .fa-circle-check {
     color: #30cf65;
   }
-  .reviews-container {
+  .reviews-carousel-container {
+    margin-top: 20px;
     overflow-x: hidden;
   }
   .slider-buttons {
