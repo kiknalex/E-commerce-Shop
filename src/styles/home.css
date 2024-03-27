@@ -6,7 +6,17 @@
   }
 
   .home-category {
+    margin-block: 30px;
+  }
+  .home-category:first-child {
     margin-top: 60px;
+  }
+  
+  .category-hr {
+    border: none;
+    height: 1px;
+    background-color: #d3d3d3;
+    
   }
   .category-heading {
     margin-block: 30px;

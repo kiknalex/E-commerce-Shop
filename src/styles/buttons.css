@@ -16,4 +16,7 @@
   .btn-profile {
     margin-inline: 5px;
   }
+  .btn-intro {
+    margin-block: 10px;
+  }
 }

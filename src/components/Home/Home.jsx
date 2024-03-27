@@ -5,7 +5,7 @@ import ReviewsCarousel from "./Reviews/ReviewsCarousel";
 const Home = () => {
   return (
     <div className="">
-      <div className="flex-home container">
+      <section className="flex-home container">
         <div className="home-intro-description">
           <h2 className="title--lg">FIND CLOTHES THAT MATCH YOUR STYLES</h2>
           <p className="text--gray">
@@ -13,7 +13,7 @@ const Home = () => {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <button className="btn-pill btn-black">Shop Now</button>
+          <button className="btn-pill btn-black btn-intro">Shop Now</button>
           <div className="company-stats-flex">
             <div>
               <p className="text--xl text--bold">200+</p>
@@ -30,10 +30,13 @@ const Home = () => {
           </div>
         </div>
         <div className="intro-bg"></div>
-      </div>
+      </section>
       <BrandsBreakLine />
-      <HomeCategory title="New Arrivals" />
-      <HomeCategory title="Best Sellers" />
+      <section className="home-categories">
+        <HomeCategory title="New Arrivals" />
+        <hr className="container category-hr"/>
+        <HomeCategory title="Best Sellers" />
+      </section>
       <PickCategorySquare />
       <ReviewsCarousel />
     </div>
