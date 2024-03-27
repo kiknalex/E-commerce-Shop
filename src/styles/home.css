@@ -6,12 +6,27 @@
   }
 
   .home-category {
-    margin-block: 30px;
+    margin-block: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 20px;
   }
   .home-category:first-child {
     margin-top: 60px;
   }
-  
+  .items-line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+  }
+  .items-line-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
   .category-hr {
     border: none;
     height: 1px;
@@ -22,11 +37,6 @@
     margin-block: 30px;
     text-transform: uppercase;
     text-align: center;
-  }
-  .items-line {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
   }
 
   .flex-category-squares {

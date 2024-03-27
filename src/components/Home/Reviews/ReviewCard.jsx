@@ -11,9 +11,9 @@ const ReviewCard = ({ text, firstName, lastNameLetter }) => {
         <i className="fa-solid fa-star"></i>
         <i className="fa-solid fa-star"></i>
       </div>
-      <h4 className="title--sm">
+      <h3 className="title--sm">
         {firstName} {lastNameLetter.toUpperCase()}. <i className="fa-solid fa-circle-check fa-sm"></i>
-      </h4>
+      </h3>
       <p className="text--gray">{text}</p>
     </div>
   );

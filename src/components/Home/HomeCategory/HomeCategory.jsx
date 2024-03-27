@@ -9,7 +9,7 @@ const HomeCategory = ({title}) => {
             <CategoryProduct />
             <CategoryProduct />
             </div>
-            <a>View All</a>
+            <a className="btn-pill btn-white">View All</a>
         </div>
     )
 }

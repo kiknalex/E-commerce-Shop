@@ -1,7 +1,7 @@
 const CategoryProduct = () => {
   return (
     <div className="product-flex">
-      <img src="" alt="" />
+      <img src="casual.jpg" alt="" className="items-line-img" />
       <h3>product name</h3>
       <div className="rating">
         <p className="sr-only">rating is 5 out of 5</p>

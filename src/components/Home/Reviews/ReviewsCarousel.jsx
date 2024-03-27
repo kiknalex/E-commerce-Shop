@@ -25,7 +25,7 @@ const ReviewsCarousel = () => {
   }, []);
 
   return (
-    <div className="container reviews-container">
+    <section className="container reviews-container">
       <div className="heading-carousel-container">
         <h2 className="heading-carousel title">Our Happy Customers</h2>
         <div className="slider-buttons">
@@ -52,7 +52,7 @@ const ReviewsCarousel = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
