@@ -1,24 +1,19 @@
-import {BrowserRouter, Routes, Route, Link, Outlet} from 'react-router-dom';
-import Header from './components/Header/Header';
-import Home from "./components/Home/Home"
-import './index.css'
+import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import Footer from "./components/Footer/Footer";
+import "./index.css";
 
 function App() {
-
   return (
     <BrowserRouter>
-      <div>
       <Header />
-      
-      
-      
-      </div>
-
       <Routes>
-      <Route path='/' element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
-      </BrowserRouter>
-  )
+      <Footer />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

@@ -2,6 +2,7 @@ import BrandsBreakLine from "../Misc/BrandsBreakLine";
 import HomeCategory from "./HomeCategory/HomeCategory";
 import PickCategorySquare from "./CategorySquares/PickCategorySquare";
 import ReviewsCarousel from "./Reviews/ReviewsCarousel";
+
 const Home = () => {
   return (
     <div className="">
@@ -34,7 +35,7 @@ const Home = () => {
       <BrandsBreakLine />
       <section className="home-categories">
         <HomeCategory title="New Arrivals" />
-        <hr className="container category-hr"/>
+        <hr className="container category-hr" />
         <HomeCategory title="Best Sellers" />
       </section>
       <PickCategorySquare />
