@@ -2,6 +2,7 @@
     .container {
         margin-inline: auto;
         width: max(calc(100vw - 200px), 1000px);
-        max-width: min(1920px, 100vw);
+        max-width: 1920px;
+        padding-inline: 20px;
     }
 }
