@@ -21,7 +21,7 @@ const Footer = () => {
             </div>
             <div className="footer-links">
               <div className="links-container">
-                <h3 className="text text--bold">Company</h3>
+                <h3 className="title--sm">Company</h3>
                 <ul className="links-list text--gray">
                   <li>
                     <a href="#">About</a>
@@ -38,7 +38,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="links-container">
-                <h3 className="text text--bold">Help</h3>
+                <h3 className="title--sm">Help</h3>
                 <ul className="links-list text--gray">
                   <li>
                     <a href="#">Customer Support</a>
@@ -55,7 +55,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="links-container">
-                <h3 className="text text--bold">FAQ</h3>
+                <h3 className="title--sm">FAQ</h3>
                 <ul className="links-list text--gray">
                   <li>
                     <a href="#">Account</a>
@@ -72,7 +72,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="links-container">
-                <h3 className="text text--bold">Resources</h3>
+                <h3 className="title--sm">Resources</h3>
                 <ul className="links-list text--gray">
                   <li>
                     <a href="#">Free eBooks</a>
