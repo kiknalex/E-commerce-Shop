@@ -1,6 +1,6 @@
 @layer base {
     :root {
-        
+        --footer-subscribe-height: 160px;
     }
 
     *,
@@ -10,14 +10,15 @@
     }
 
     body {
-        font-family: system-ui;
+        font-family: Satoshi, system-ui;
         margin: 0;
     }
 
     input {
         all: unset;
     }
-    h1, h2 {
+    h1, h2, h3, h4 {
+        font-family: Integral-CF, system-ui;
         margin: 0;
     }
     ul, li {
@@ -29,6 +30,9 @@
     a, button {
         all: unset;
         cursor: pointer;
+    }
+    button {
+        text-align: center;
     }
     
     .ax-button {

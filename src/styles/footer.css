@@ -2,24 +2,30 @@
   .flex-footer {
     display: flex;
     gap: 50px;
-    align-items: center;
+   
   }
   .footer-container {
     margin-top: 200px;
     background-color: #f1f1f1;
     padding-bottom: 50px;
+    padding-top: 100px;
+    position: relative;
   }
   .description-container {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+   
   }
-  
+
   .soc-icon-link {
     padding: 5px;
   }
   .footer-links {
     display: flex;
     flex: 3;
-    
+    align-items: center;
   }
   .links-container {
     flex: 1;
@@ -30,4 +36,39 @@
     gap: 10px;
     justify-content: space-between;
   }
+
+  .subscribe-container {
+    position: absolute;
+    height: var(--footer-subscribe-height);
+    top: calc(0px - calc(var(--footer-subscribe-height) / 2));
+    left: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 80px;
+    padding-block: 30px;
+  }
+
+  .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    flex-basis: 50%;
+    
+  }
+  .subscribe-heading {
+    flex-basis: 50%;
+  }
+  .subscribe-input {
+    width: 250px;
+    color: black;
+    background-color: white;
+   
+  }
+  
 }

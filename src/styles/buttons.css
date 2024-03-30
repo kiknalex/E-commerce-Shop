@@ -3,6 +3,7 @@
     border-radius: 30px;
     padding-inline: 45px;
     padding-block: 10px;
+    max-width: 200px;
   }
   .btn-black {
     color: white;
