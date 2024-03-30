@@ -8,7 +8,7 @@ const CategorySquare = ({ category, imgSrc }) => {
         height="100"
         className="category-square-img"
       />
-      <h3>{category}</h3>
+      <h3 className="title--sm">{category}</h3>
     </a>
   );
 };
