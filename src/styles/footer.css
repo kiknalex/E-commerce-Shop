@@ -8,8 +8,8 @@
     margin-top: 200px;
     background-color: #f1f1f1;
     padding-bottom: 50px;
-    padding-top: 100px;
     position: relative;
+    padding-top: 150px;
   }
   .description-container {
     flex: 1;
@@ -50,7 +50,7 @@
     justify-content: space-between;
     padding-inline: 80px;
     padding-block: 30px;
-    width: calc(100vw - 240px);
+    width: min(90vw, 1500px);
   }
 
   .subscribe-form {

@@ -43,4 +43,16 @@
         outline: revert;
         box-sizing: border-box;
     }
+
+    @media (max-width: 1450px) {
+        :root {
+            --footer-subscribe-height: 200px;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        :root {
+            --footer-subscribe-height: 400px;
+        }
+    }
 }
