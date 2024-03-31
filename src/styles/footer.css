@@ -50,7 +50,7 @@
     justify-content: space-between;
     padding-inline: 80px;
     padding-block: 30px;
-    width: max(calc(100vw - 240px), 960px);
+    width: calc(100vw - 240px);
   }
 
   .subscribe-form {

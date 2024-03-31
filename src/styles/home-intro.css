@@ -1,41 +1,39 @@
 @layer component {
-    .home-intro-description {
-        width: 50%;
-        padding-right: 20px;
-    }
-    .intro-bg {
-        background-image: url("/introImage.jpg");
-        
-        background-size: cover;
-        background-repeat: no-repeat;
-        
-        min-width: 500px;
-        width: 50%;
-        
-    }
+  .home-intro-description {
+    width: 50%;
+    padding-right: 20px;
+  }
+  .intro-bg {
+    background-image: url("/introImage.jpg");
 
-    .img-brand {
-        color: white;
-    }
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    .company-stats-flex {
-        display: flex;
-        gap: 10px;
-        margin-top: 20px;
-    }
-    .company-stats-flex > div > p {
-        margin-block: 0;
-    }
-    .company-stats-flex > div:not(:last-child)  {
-        padding-right: 10px;
-        border-right: 1px solid rgba(0, 0, 0, 0.171);
-    }
-    .brand-breakline {
-        background-color: black;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-inline: 60px;
-        padding-block: 30px;
-    }
+    width: 50%;
+  }
+
+  .img-brand {
+    color: white;
+  }
+
+  .company-stats-flex {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .company-stats-flex > div > p {
+    margin-block: 0;
+  }
+  .company-stats-flex > div:not(:last-child) {
+    padding-right: 10px;
+    border-right: 1px solid rgba(0, 0, 0, 0.171);
+  }
+  .brand-breakline {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 60px;
+    padding-block: 30px;
+  }
 }

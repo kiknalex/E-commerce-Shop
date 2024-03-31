@@ -1,7 +1,7 @@
 import CategoryProduct from "./CategoryProduct";
 const HomeCategory = ({title}) => {
     return (
-        <div className="container home-category">
+        <div className=" home-category">
             <h2 className="category-heading title">{title}</h2>
             <div className="items-line">
             <CategoryProduct />
