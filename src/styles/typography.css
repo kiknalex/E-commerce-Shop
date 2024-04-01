@@ -59,4 +59,16 @@
     font-weight: bold;
     line-height: 1.77;
   }
+
+  @media (max-width: 1060px) {
+    .title--lg {
+      font-size: 3rem;
+    }
+    .title {
+      font-size: 2rem;
+    }
+    .text--xl {
+      font-size: 2rem;
+    }
+  }
 }

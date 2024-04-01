@@ -50,7 +50,13 @@
         }
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1060px) {
+        :root {
+            --footer-subscribe-height: 350px;
+        }
+    }
+
+    @media (max-width: 760px) {
         :root {
             --footer-subscribe-height: 400px;
         }
