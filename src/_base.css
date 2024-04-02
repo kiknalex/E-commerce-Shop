@@ -58,7 +58,7 @@
 
     @media (max-width: 760px) {
         :root {
-            --footer-subscribe-height: 400px;
+            --footer-subscribe-height: 300px;
         }
     }
 }
