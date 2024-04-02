@@ -15,7 +15,8 @@ const Header = () => {
     }
   };
   return (
-    <header className="container flex-header header">
+    <header className="header-bg">
+      <div className="container flex-header header">
       <h1 className="title">
         <a href="#">SHOP.CO</a>
       </h1>
@@ -27,6 +28,7 @@ const Header = () => {
 
       <SearchBar />
       <HeaderProfileBtn />
+      </div>
     </header>
   );
 };

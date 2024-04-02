@@ -1,7 +1,12 @@
 @layer component {
     .header {
        position: relative;
-       margin-top: 20px;
+       padding-top: 20px;
+       padding-bottom: 20px;
+       
+    }
+    .header-bg {
+      background-color: #FFFFFF;
     }
   .flex-header {
     display: flex;

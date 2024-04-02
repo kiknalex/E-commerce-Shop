@@ -29,11 +29,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
-    gap: 10px;
     margin-top: 20px;
   }
   .company-stats-grid > div > p {
     margin-block: 0;
+  }
+  .company-stats-grid > div {
+    padding-left: 20px;
+    width: 100%;
   }
   .company-stats-grid > div:not(:last-child) {
     padding-right: 10px;
@@ -84,6 +87,7 @@
       border-right: none;
     }
     .company-stats-grid > div {
+      padding-left: 0px;
       text-align: center;
       width: 100%;
     }
