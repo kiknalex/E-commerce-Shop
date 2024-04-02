@@ -3,13 +3,14 @@
     display: flex;
     visibility: hidden;
     position: absolute;
-    margin: auto;
+    margin-inline: auto;
     transform: scaleY(0);
     left: 0;
     right: 0;
     top: 83px;
     height: 50vh;
     max-height: 500px;
+    
     opacity: 0;
     background-color: white;
     z-index: 10;
