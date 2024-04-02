@@ -15,7 +15,7 @@ const Home = () => {
             style.
           </p>
           <button className="btn-pill btn-black btn-intro">Shop Now</button>
-          <div className="company-stats-flex">
+          <div className="company-stats-grid">
             <div>
               <p className="text--xl text--bold">200+</p>
               <p className="text--sm text--gray">International Brands</p>

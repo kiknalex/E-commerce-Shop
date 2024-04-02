@@ -25,15 +25,17 @@
     width: max(8vw, 80px);
   }
 
-  .company-stats-flex {
-    display: flex;
+  .company-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
     gap: 10px;
     margin-top: 20px;
   }
-  .company-stats-flex > div > p {
+  .company-stats-grid > div > p {
     margin-block: 0;
   }
-  .company-stats-flex > div:not(:last-child) {
+  .company-stats-grid > div:not(:last-child) {
     padding-right: 10px;
     border-right: 1px solid rgba(0, 0, 0, 0.171);
   }
@@ -48,7 +50,7 @@
     max-width: 100vw;
   }
 
-  
+
   @media (max-width: 1060px) {
     .brand-breakline {
       grid-template-columns: 1fr 1fr 1fr;
@@ -70,6 +72,23 @@
       flex-direction: column;
       height: 1000px;
       gap: 20px;
+    }
+    .company-stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .company-stats-grid > div:last-child {
+      grid-column-start: span 2;
+    }
+    .company-stats-grid > div:not(:last-child) {
+      padding-right: 0px;
+      border-right: none;
+    }
+    .company-stats-grid > div {
+      text-align: center;
+      width: 100%;
+    }
+    .company-stats-grid > div:first-child {
+      border-right: 1px solid rgba(0, 0, 0, 0.171);
     }
   }
 }
