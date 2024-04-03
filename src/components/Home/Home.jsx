@@ -39,9 +39,9 @@ const Home = () => {
       </section>
       <BrandsBreakLine />
       <section className="container home-categories">
-        <HomeCategory title="New Arrivals" />
+        <HomeCategory title="New Arrivals" category="men's clothing" />
         <hr className="container category-hr" />
-        <HomeCategory title="Best Sellers" />
+        <HomeCategory title="Best Sellers" category="women's clothing" />
       </section>
       <PickCategorySquare />
       <ReviewsCarousel />
