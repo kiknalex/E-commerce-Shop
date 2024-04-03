@@ -11,7 +11,7 @@ const HomeCategory = ({ title, category }) => {
   return (
     <div className=" home-category">
       <h2 className="category-heading title">{title}</h2>
-      <div className="items-line">
+      <div className="grid-category-squares">
         {productList.map((product) => {
           return <CategoryProduct key={product.id} {...product} />;
         })}
