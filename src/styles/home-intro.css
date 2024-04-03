@@ -1,7 +1,8 @@
 @layer component {
   .flex-home {
     display: flex;
-    height: max(80vh, 100px);
+    height: 80vh;
+    max-height: 550px;
     margin-top: 50px;
   }
 
@@ -74,6 +75,7 @@
     .flex-home {
       flex-direction: column;
       height: 1000px;
+      max-height: 1000px;
       gap: 20px;
     }
     .company-stats-grid {
