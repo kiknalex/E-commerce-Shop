@@ -1,9 +1,14 @@
+import { useEffect } from "react";
+import { faker } from "@faker-js/faker";
 import BrandsBreakLine from "../Misc/BrandsBreakLine";
 import HomeCategory from "./HomeCategory/HomeCategory";
 import PickCategorySquare from "./CategorySquares/PickCategorySquare";
 import ReviewsCarousel from "./Reviews/ReviewsCarousel";
 
 const Home = () => {
+  
+  
+
   return (
     <>
       <section className="flex-home container">

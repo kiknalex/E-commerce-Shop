@@ -4,6 +4,7 @@
     padding-inline: 45px;
     padding-block: 10px;
     max-width: 200px;
+    text-align: center;
   }
   .btn-black {
     color: white;
@@ -24,5 +25,13 @@
   }
   .btn-intro {
     margin-block: 10px;
+  }
+
+  @media (max-width: 760px) {
+    .btn-pill {
+      max-width: none;
+      width: 100%;
+      padding-inline: 0px;
+    }
   }
 }

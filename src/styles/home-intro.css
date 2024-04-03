@@ -2,7 +2,7 @@
   .flex-home {
     display: flex;
     height: 80vh;
-    max-height: 550px;
+    
     margin-top: 50px;
   }
 
