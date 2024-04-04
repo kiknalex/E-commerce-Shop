@@ -5,15 +5,29 @@
     padding-block: 10px;
     max-width: 200px;
     text-align: center;
+    transition: background-color, 0.3s;
   }
   .btn-black {
     color: white;
     background-color: black;
+    border: 1px solid transparent;
+    
+  }
+  .btn-black:hover {
+    color: black;
+    background-color: white;
+    border-color: black;
+    
   }
   .btn-white {
     color: black;
     background-color: transparent;
     border: 1px solid #a5a5a5;
+  }
+  .btn-white:hover {
+    color: white;
+    background-color: black;
+    border: 1px solid transparent;
   }
   .btn-search {
     width: 24px;
@@ -26,12 +40,18 @@
   .btn-intro {
     margin-block: 10px;
   }
+  .btn-hamburger {
+    display: none;
+  }
 
   @media (max-width: 760px) {
     .btn-pill {
       max-width: none;
       width: 100%;
       padding-inline: 0px;
+    }
+    .btn-hamburger {
+      display: initial;
     }
   }
 }

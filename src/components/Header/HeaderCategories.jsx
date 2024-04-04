@@ -1,7 +1,7 @@
 import Dropdown from "./Dropdown";
 const HeaderCategories = ({ dropdownShow, handleMouseIn, handleMouseOut }) => {
   return (
-    <nav>
+    <nav className="header-nav">
       <ul className="flex-header flex-categories">
         <li
           className={`dropdown-enter ${dropdownShow}`}
