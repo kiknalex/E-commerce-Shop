@@ -39,4 +39,10 @@
   .heading-carousel {
     text-transform: uppercase;
   }
+
+  @media (max-width: 760px) {
+    .review-card {
+      width: 100%;
+    }
+  }
 }
