@@ -63,16 +63,28 @@
     left: 0;
     right: 0;
     top: 0;
-    padding: 0 16px;
+    overflow-y: auto;
+    padding: 0 20px;
     position: fixed;
     z-index: 200;
-    overflow: hidden;
-    overscroll-behavior: none;
   }
   .mobile-search-container.opened {
     display: block;
   }
 
+  .mobile-search {
+    position: relative;
+    top: 50px;
+    height: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .mobile-search-close {
+    text-align: right;
+    padding: 8px;
+  }
   @media (max-width: 1060px) {
     .flex-form {
       display: none;
