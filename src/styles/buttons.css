@@ -43,6 +43,9 @@
   .btn-hamburger {
     display: none;
   }
+  .btn-modal-close {
+    
+  }
 
   @media (max-width: 760px) {
     .btn-pill {
