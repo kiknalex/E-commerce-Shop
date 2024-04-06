@@ -46,6 +46,9 @@
     padding-block: 10px;
     background-color: #f0f0f0;
   }
+  .input-search {
+    width: 100%;
+  }
   .btn-search-mobile {
     display: none;
   }

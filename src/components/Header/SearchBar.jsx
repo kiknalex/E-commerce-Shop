@@ -4,7 +4,7 @@ const SearchBar = () => {
       <button className="btn-search" aria-label="Search">
         <img src="/search-btn.png" className="btn-img" alt="search" />
       </button>
-      <input type="text" name="search-product" aria-label="Search Products" placeholder="Search for products..." />
+      <input type="text" name="search-product" aria-label="Search Products" className="input-search" placeholder="Search for products..." />
     </form>
   );
 };

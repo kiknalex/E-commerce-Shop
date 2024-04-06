@@ -29,6 +29,7 @@
     width: 20vw;
     height: 20vw;
     border-radius: 20px;
+    align-self: center;
   }
   .category-product-title {
     width: 20vw;
