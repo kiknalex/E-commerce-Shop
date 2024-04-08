@@ -3,11 +3,11 @@
 @import "./styles/container.css";
 @import "./styles/header.css";
 @import "./styles/buttons.css";
-@import "./styles/home.css";
+@import "./styles/home/home.css";
 @import "./styles/typography.css";
 @import "./styles/embla.css";
 @import "./styles/dropdown.css";
-@import "./styles/home-intro.css";
+@import "./styles/home/home-intro.css";
 @import "./styles/reviews.css";
 @import "./styles/footer.css";
 @import "./Fonts/WEB/css/satoshi.css";
