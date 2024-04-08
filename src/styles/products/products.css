@@ -1,0 +1,34 @@
+@layer component {
+    .products-container-grid {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+    .products-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+    }
+    .filters-container {
+        width: 100%;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .filter-categories {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .filter-price {
+        display: flex;
+    }
+    
+    .range-min {
+        
+    }
+    .range-max {
+       
+    }
+    
+}

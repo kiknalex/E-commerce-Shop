@@ -1,4 +1,3 @@
-
 import BrandsBreakLine from "../Misc/BrandsBreakLine";
 import HomeCategory from "./HomeCategory/HomeCategory";
 import PickCategorySquare from "./CategorySquares/PickCategorySquare";
@@ -6,7 +5,7 @@ import ReviewsCarousel from "./Reviews/ReviewsCarousel";
 
 const Home = () => {
   return (
-    <>
+    <main>
       <section className="flex-home container">
         <div className="home-intro-description">
           <h2 className="title--lg">FIND CLOTHES THAT MATCH YOUR STYLES</h2>
@@ -41,7 +40,7 @@ const Home = () => {
       </section>
       <PickCategorySquare />
       <ReviewsCarousel />
-    </>
+    </main>
   );
 };
 
