@@ -4,7 +4,7 @@ const FooterSubscribe = () => {
       <h4 className="title subscribe-heading">Stay upto date about our latest offers</h4>
       <form action="submit" className="subscribe-form">
         <input
-          type="text"
+          type="email"
           className="subscribe-input btn-pill"
           placeholder="Enter your email address..."
         />

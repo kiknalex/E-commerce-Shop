@@ -1,5 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import CategoryProduct from "../Home/HomeCategory/CategoryProduct";
+import RangeSlider from "react-range-slider-input";
+
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [price, setPrice] = useState({ min: 0, max: 1000 });
@@ -10,7 +12,6 @@ const Products = () => {
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);
-
   const productsList = (products) => {
     return useMemo(
       () =>
@@ -20,6 +21,14 @@ const Products = () => {
       [products, filterOptions]
     );
   };
+
+  const onPriceEnter = (min, max) => {
+    if(min > 1000 || max > 1000) {
+      return null;
+    }
+    setPrice({min, max});
+  }
+  
   return (
     <main className="">
       <div className="container products-container-grid">
@@ -30,33 +39,26 @@ const Products = () => {
           </div>
           <div>
             <ul className="filter-categories">
-              <li>jewelery</li>
+              <li>Jewelery</li>
               <li>Men's clothing</li>
               <li>Women's clothing</li>
               <li>Electronics</li>
             </ul>
           </div>
           <div className="filter-price">
-            <input
-              type="number"
-              className="range-min"
-              min="0"
-              max="10000"
-              value={price.min}
-              onChange={(e) =>
-                setPrice((price) => ({ ...price, min: e.target.value }))
-              }
+            <RangeSlider
+              className="slider"
+              min={0}
+              max={1000}
+              step={50}
+              rangeSlideDisabled
+              value={[price.min, price.max]}
+              onInput={(value) => setPrice({ min: value[0], max: value[1] })}
             />
-            <input
-              type="number"
-              className="range-max"
-              min="0"
-              max="10000"
-              value={price.max}
-              onChange={(e) =>
-                setPrice((price) => ({ ...price, max: e.target.value }))
-              }
-            />
+            <div className="filter-price-num">
+              <input type="text" value={price.min} onChange={e => onPriceEnter(e.target.value, price.max)} inputmode="numeric" className="filter-price-num-input" />
+              <input type="text" value={price.max} onChange={e => onPriceEnter(price.min, e.target.value)} inputmode="numeric" className="filter-price-num-input"/>
+            </div>
           </div>
           <div className="filter-color">
             <h3>Colors</h3>
