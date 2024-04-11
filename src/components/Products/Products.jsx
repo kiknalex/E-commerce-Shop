@@ -1,34 +1,77 @@
 import { useEffect, useState, useMemo } from "react";
 import CategoryProduct from "../Home/HomeCategory/CategoryProduct";
 import RangeSlider from "react-range-slider-input";
-
+import ButtonSize from "../Misc/ButtonSize";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [price, setPrice] = useState({ min: 0, max: 1000 });
-  const [filterOptions, setFilterOptions] = useState({});
+  const [size, setSize] = useState([]);
+  const [filterOptions, setFilterOptions] = useState({ price, size });
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products?limit=9`)
       .then((response) => response.json())
-      .then((data) => setProducts(data));
+      .then((newProducts) =>
+        setProducts(
+          newProducts.map((product) => {
+            return {
+              ...product,
+              size: ["small", "medium", "big"][Math.floor(Math.random() * 3)], // add fake size to the product list for demonstration purposes
+            };
+          })
+        )
+      );
   }, []);
   const productsList = (products) => {
     return useMemo(
       () =>
-        products.map((product) => (
-          <CategoryProduct key={product.id} {...product} />
-        )),
+        products
+          .filter((product) => {
+            if (
+              product.price >= filterOptions.price.min &&
+              product.price <= filterOptions.price.max &&
+              (filterOptions.size.length === 0 ||
+                filterOptions.size.includes(product.size))
+            ) {
+              return product;
+            }
+            return null;
+          })
+          .map((product) => {
+            return <CategoryProduct key={product.id} {...product} />;
+          }),
       [products, filterOptions]
     );
   };
 
-  const onPriceEnter = (min, max) => {
-    if(min > 1000 || max > 1000) {
+  const handlePriceEnter = (min, max) => {
+    if (min > 1000 || max > 1000) {
       return null;
     }
-    setPrice({min, max});
-  }
-  
+    setPrice({ min, max });
+  };
+
+  const handleSizeClick = (newSize) => {
+    console.log(size);
+    if (size.includes(newSize)) {
+      setSize(size.filter((size) => size !== newSize));
+    } else {
+      setSize([...size, newSize]);
+    }
+  };
+  const isSizeActive = (currentSize) => {
+    if (size.includes(currentSize.toLowerCase())) {
+      return "size-active";
+    } else return "";
+  };
+  const handleFilterClick = () => {
+    setFilterOptions({
+      price: { ...price },
+      size: [...size],
+    });
+    console.log(products);
+  };
+
   return (
     <main className="">
       <div className="container products-container-grid">
@@ -56,51 +99,57 @@ const Products = () => {
               onInput={(value) => setPrice({ min: value[0], max: value[1] })}
             />
             <div className="filter-price-num">
-              <input type="text" value={price.min} onChange={e => onPriceEnter(e.target.value, price.max)} inputmode="numeric" className="filter-price-num-input" />
-              <input type="text" value={price.max} onChange={e => onPriceEnter(price.min, e.target.value)} inputmode="numeric" className="filter-price-num-input"/>
+              <input
+                type="text"
+                value={price.min}
+                onChange={(e) => handlePriceEnter(e.target.value, price.max)}
+                inputmode="numeric"
+                className="filter-price-num-input"
+              />
+              <input
+                type="text"
+                value={price.max}
+                onChange={(e) => handlePriceEnter(price.min, e.target.value)}
+                inputmode="numeric"
+                className="filter-price-num-input"
+              />
             </div>
           </div>
-          <div className="filter-color">
-            <h3>Colors</h3>
-            <ul>
-              <li>
-                <i></i>
-              </li>
-              <li>
-                <i></i>
-              </li>
-              <li>
-                <i></i>
-              </li>
-              <li>
-                <i></i>
-              </li>
-              <li>
-                <i></i>
-              </li>
-              <li>
-                <i></i>
-              </li>
-              <li>
-                <i></i>
-              </li>
-              <li>
-                <i></i>
-              </li>
-            </ul>
-          </div>
-          <div className="filter-color">
+          <div className="filter-sizes">
             <h3>Size</h3>
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+            <ul className="sizes-list">
+              <li>
+                <ButtonSize
+                  className={`btn-size text--gray ${isSizeActive("small")}`}
+                  onClick={() => handleSizeClick("small")}
+                >
+                  Small
+                </ButtonSize>
+              </li>
+              <li>
+                <ButtonSize
+                  className={`btn-size text--gray ${isSizeActive("medium")}`}
+                  onClick={() => handleSizeClick("medium")}
+                >
+                  Medium
+                </ButtonSize>
+              </li>
+              <li>
+                <ButtonSize
+                  className={`btn-size text--gray ${isSizeActive("big")}`}
+                  onClick={() => handleSizeClick("big")}
+                >
+                  Big
+                </ButtonSize>
+              </li>
             </ul>
           </div>
-          <button>Apply Filter</button>
+          <button
+            className="btn-pill btn-black filter-apply"
+            onClick={handleFilterClick}
+          >
+            Apply Filter
+          </button>
         </div>
         <div className="products-container">
           <div className="products-heading">

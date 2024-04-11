@@ -11,13 +11,11 @@
     color: white;
     background-color: black;
     border: 1px solid transparent;
-    
   }
   .btn-black:hover {
     color: black;
     background-color: white;
     border-color: black;
-    
   }
   .btn-white {
     color: black;
@@ -43,7 +41,14 @@
   .btn-hamburger {
     display: none;
   }
-
+  .btn-size {
+    border-radius: 30px;
+    padding-inline: 20px;
+    padding-block: 10px;
+    text-align: center;
+    transition: background-color, 0.3s;
+    background-color: #dfdfdf;
+  }
 
   @media (max-width: 760px) {
     .btn-pill {

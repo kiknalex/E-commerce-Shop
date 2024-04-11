@@ -1,5 +1,4 @@
 const CategoryProduct = ({ title, price, category, description, image }) => {
-  console.log("hi");
   return (
     <div className="product-flex">
       <img
