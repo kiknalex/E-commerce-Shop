@@ -4,7 +4,7 @@ const HeaderCategories = ({ dropdownShow, handleMouseIn, handleMouseOut }) => {
     <nav className="header-nav">
       <ul className="flex-header flex-categories">
         <li
-          className={`dropdown-enter ${dropdownShow}`}
+          className={`dropdown-enter ${dropdownShow ? "active" : ""}`}
           onMouseEnter={handleMouseIn}
           onMouseOut={handleMouseOut}
         >

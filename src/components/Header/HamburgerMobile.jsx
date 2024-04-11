@@ -5,12 +5,12 @@ const HamburgerMobile = ({ mobileMenuShow, onClick, onPointerLeave }) => {
       <div
         onTouchStart={onClick}
         onClick={onClick}
-        className={`outside-hamburger-click-close ${mobileMenuShow}`}
+        className={`outside-hamburger-click-close ${mobileMenuShow ? "opened" : ""}`}
       ></div>
 
       <nav
         onPointerLeave={onPointerLeave}
-        className={`mobile-hamburger-container ${mobileMenuShow}`}
+        className={`mobile-hamburger-container ${mobileMenuShow ? "opened" : ""}`}
       >
         <button onClick={onClick} aria-label="close" type="button" className="btn-modal-close">
           <i className="fa-solid fa-xmark fa-2xl"></i>

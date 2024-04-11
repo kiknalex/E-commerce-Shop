@@ -1,7 +1,7 @@
 const Dropdown = ({ dropdownShow }) => {
   return (
-    <div className={`dropdown-container ${dropdownShow}`}>
-      <div className={`dropdown-sections-flex ${dropdownShow}`}>
+    <div className={`dropdown-container ${dropdownShow ? "active" : ""}`}>
+      <div className={`dropdown-sections-flex ${dropdownShow ? "active" : ""}`}>
         <ul className="dropdown-items-flex">
           <li>Shoes</li>
           <li>T-shirts</li>

@@ -4,17 +4,11 @@ import HeaderProfileBtn from "./HeaderProfileBtn";
 import HamburgerMobile from "./HamburgerMobile";
 import { useState } from "react";
 const Header = () => {
-  const [dropdownShow, setDropdownShow] = useState("");
-  const [mobileSearchShow, setMobileSearchShow] = useState("");
-  const [mobileMenuShow, setMobileMenuShow] = useState("");
+  const [dropdownShow, setDropdownShow] = useState(false);
+  const [mobileSearchShow, setMobileSearchShow] = useState(false);
+  const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const handleMouseClick = (setStateElementShow) => {
-    setStateElementShow((prevState) => {
-      if (prevState === "") {
-        return "opened";
-      } else {
-        return "";
-      }
-    });
+    setStateElementShow((prevState) => !prevState);
   };
 
   const handleMouseIn = (e) => {
