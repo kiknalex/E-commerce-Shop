@@ -50,6 +50,10 @@
     background-color: #dfdfdf;
   }
 
+  .btn-dropdown-sort {
+    width: 100%;
+    padding-block: 5px;
+  }
   @media (max-width: 760px) {
     .btn-pill {
       max-width: none;
