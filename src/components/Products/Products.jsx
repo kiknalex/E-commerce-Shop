@@ -1,15 +1,24 @@
 import { useEffect, useState, useMemo } from "react";
+import { useParams, Link } from "react-router-dom";
 import CategoryProduct from "../Home/HomeCategory/CategoryProduct";
 import RangeSlider from "react-range-slider-input";
 import ButtonSize from "../Misc/ButtonSize";
+
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [price, setPrice] = useState({ min: 0, max: 1000 });
   const [size, setSize] = useState([]);
   const [filterOptions, setFilterOptions] = useState({ price, size });
   const [isSortOpen, setIsSortOpen] = useState(false);
+  const [activePage, setActivePage] = useState(1);
+  const category = useParams();
+
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products?limit=9`)
+    fetch(
+      `https://fakestoreapi.com/products${
+        category.category ? `/category/${category.category}` : ""
+      }`
+    )
       .then((response) => response.json())
       .then((newProducts) =>
         setProducts(
@@ -20,8 +29,9 @@ const Products = () => {
             };
           })
         )
-      );
-  }, []);
+      )
+      .catch((error) => console.log(error));
+  }, [category]);
   const productsList = (products) => {
     return useMemo(
       () =>
@@ -35,12 +45,16 @@ const Products = () => {
             ) {
               return product;
             }
-            return null;
+            return false;
           })
-          .map((product) => {
-            return <CategoryProduct key={product.id} {...product} />;
+          .map((product, index) => {
+            const startIndex = (activePage - 1) * 9;
+            const endIndex = activePage * 9;
+            if (index + 1 > startIndex && index < endIndex) {
+              return <CategoryProduct key={product.id} {...product} />;
+            }
           }),
-      [products, filterOptions]
+      [products, filterOptions, activePage]
     );
   };
 
@@ -73,10 +87,7 @@ const Products = () => {
       size: [...size],
     });
   };
-  const handleSortClick = (event) => {
-    if (event.currentTarget.value !== event.target.value) {
-      setIsSortOpen(false);
-    }
+  const handleSortClick = () => {
     setIsSortOpen((isSortOpen) => !isSortOpen);
   };
   const handleSortMode = (sortFn) => {
@@ -99,10 +110,21 @@ const Products = () => {
           </div>
           <div>
             <ul className="filter-categories">
-              <li>Jewelery</li>
-              <li>Men's clothing</li>
-              <li>Women's clothing</li>
-              <li>Electronics</li>
+              <li>
+                <Link to="/products">All</Link>
+              </li>
+              <li>
+                <Link to="jewelery">Jewelery</Link>
+              </li>
+              <li>
+                <Link to="men's clothing">Men's clothing</Link>
+              </li>
+              <li>
+                <Link to="women's clothing">Women's clothing</Link>
+              </li>
+              <li>
+                <Link to="electronics">Electronics</Link>
+              </li>
             </ul>
           </div>
           <div className="filter-price">
@@ -122,9 +144,9 @@ const Products = () => {
               <input
                 type="text"
                 value={price.min}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(e) => handlePriceEnter(e.target.value, price.max)}
-                inputmode="numeric"
+                inputMode="numeric"
                 className="filter-price-num-input"
                 maxLength={9}
                 placeholder="0"
@@ -136,9 +158,9 @@ const Products = () => {
               <input
                 type="text"
                 value={price.max}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(e) => handlePriceEnter(price.min, e.target.value)}
-                inputmode="numeric"
+                inputMode="numeric"
                 className="filter-price-num-input"
                 maxLength={9}
                 id="max-price-input"
@@ -185,7 +207,7 @@ const Products = () => {
           <div className="products-heading">
             <h1>Casual</h1>
             <div className="products-sort">
-              <p>showing 1-10 of 100 products</p>
+              <p>showing 1-10 of {products.length} products</p>
               <div
                 className="dropdown-sort-container"
                 onBlur={(e) =>
@@ -226,7 +248,34 @@ const Products = () => {
           <div className="products-list">
             {products && productsList(products)}
           </div>
-          <div className="pages-list"></div>
+          <div className="pages-list">
+            <ol>
+              {products.map((product, index, array) => {
+                if ((index + 1) % 9 === 0) {
+                  return (
+                    <li key={index}>
+                      <button onClick={() => setActivePage((index + 1) / 9)}>
+                        {(index + 1) / 9}
+                      </button>
+                    </li>
+                  );
+                } else if (index + 1 === array.length) {
+                  return (
+                    <li key={index}>
+                      <button
+                        onClick={() =>
+                          setActivePage(Math.ceil((index + 1) / 9))
+                        }
+                      >
+                        {Math.ceil(array.length / 9)}
+                      </button>
+                    </li>
+                  );
+                }
+                return null;
+              })}
+            </ol>
+          </div>
         </div>
       </div>
     </main>
