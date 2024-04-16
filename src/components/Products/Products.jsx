@@ -3,7 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import CategoryProduct from "../Home/HomeCategory/CategoryProduct";
 import RangeSlider from "react-range-slider-input";
 import ButtonSize from "../Misc/ButtonSize";
-
+import Path from "./Path";
+import {capitalize} from "../Helpers/Helpers";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [price, setPrice] = useState({ min: 0, max: 1000 });
@@ -98,6 +99,7 @@ const Products = () => {
 
   return (
     <main id="products-page" className="products-page">
+      <Path />
       <div className="container products-container-grid">
         <div className="filters-container">
           <div className="filters-heading">
@@ -207,7 +209,7 @@ const Products = () => {
         </div>
         <div className="products-container">
           <div className="products-heading">
-            <h1>Casual</h1>
+            <h1>{category.category && capitalize(category.category)}</h1>
             <div className="products-sort">
               <p>Showing {9 * (activePage - 1)}-{9 * activePage} of {products.length} products</p>
               <div
@@ -219,6 +221,7 @@ const Products = () => {
               >
                 <button onClick={handleSortClick} className="btn-dropdown-sort">
                   Sort By
+                  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div className={`dropdown-sort ${isSortOpen ? "open" : ""}`}>
                   <ul className="dropdown-sort-list">
