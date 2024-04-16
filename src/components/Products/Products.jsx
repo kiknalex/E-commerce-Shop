@@ -90,12 +90,14 @@ const Products = () => {
   const handleSortClick = () => {
     setIsSortOpen((isSortOpen) => !isSortOpen);
   };
+
   const handleSortMode = (sortFn) => {
     setProducts((products) => products.toSorted(sortFn));
     setIsSortOpen(false);
   };
+
   return (
-    <main className="">
+    <main className="products-page">
       <div className="container products-container-grid">
         <div className="filters-container">
           <div className="filters-heading">
@@ -207,7 +209,7 @@ const Products = () => {
           <div className="products-heading">
             <h1>Casual</h1>
             <div className="products-sort">
-              <p>showing 1-10 of {products.length} products</p>
+              <p>Showing {9 * (activePage - 1)}-{9 * activePage} of {products.length} products</p>
               <div
                 className="dropdown-sort-container"
                 onBlur={(e) =>
@@ -248,13 +250,33 @@ const Products = () => {
           <div className="products-list">
             {products && productsList(products)}
           </div>
-          <div className="pages-list">
-            <ol>
+          <div className="pages-list-container">
+            <button
+              disabled={activePage === 1}
+              className="change-page"
+              onClick={() => setActivePage((prevPage) => prevPage - 1)}
+            >
+              <span>
+                <i
+                  className="fa-solid fa-arrow-left fa-lg arrow"
+                  onClick={() => handlePageChange("minus")}
+                ></i>
+              </span>{" "}
+              Previous
+            </button>
+            <ol className="pages-list">
               {products.map((product, index, array) => {
                 if ((index + 1) % 9 === 0) {
                   return (
                     <li key={index}>
-                      <button onClick={() => setActivePage((index + 1) / 9)}>
+                      <button
+                        className={`page-number ${
+                          activePage === (index + 1) / 9
+                            ? "page-number-active"
+                            : ""
+                        }`}
+                        onClick={() => setActivePage((index + 1) / 9)}
+                      >
                         {(index + 1) / 9}
                       </button>
                     </li>
@@ -263,6 +285,11 @@ const Products = () => {
                   return (
                     <li key={index}>
                       <button
+                        className={`page-number ${
+                          activePage === Math.ceil((index + 1) / 9)
+                            ? "page-number-active"
+                            : ""
+                        }`}
                         onClick={() =>
                           setActivePage(Math.ceil((index + 1) / 9))
                         }
@@ -275,6 +302,16 @@ const Products = () => {
                 return null;
               })}
             </ol>
+            <button
+              disabled={activePage === Math.ceil(products.length / 9)}
+              className="change-page"
+              onClick={() => setActivePage((prevPage) => prevPage + 1)}
+            >
+              Next{" "}
+              <span>
+                <i className="fa-solid fa-arrow-right fa-lg arrow"></i>
+              </span>
+            </button>
           </div>
         </div>
       </div>
