@@ -97,7 +97,7 @@ const Products = () => {
   };
 
   return (
-    <main className="products-page">
+    <main id="products-page" className="products-page">
       <div className="container products-container-grid">
         <div className="filters-container">
           <div className="filters-heading">

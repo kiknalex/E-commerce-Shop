@@ -4,6 +4,13 @@
     gap: 50px;
     padding-top: 20px;
   }
+  .flex-footer h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: Integral-CF, system-ui;
+  }
   .footer-container {
     background-color: #e3e3e3;
     padding-bottom: 50px;

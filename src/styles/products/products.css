@@ -1,8 +1,13 @@
-@layer page {
+@layer component {
   .products-page {
     background-color: white;
-    margin-bottom: 200px;
+    padding-bottom: 200px;
+    font-family: Satoshi, system-ui;
   }
+  .products-page h1,h2,h3 {
+    font-family: Satoshi, system-ui;
+  }
+  
 }
 
 @layer component {
@@ -81,7 +86,7 @@
   }
   .page-number {
     padding: 10px 15px;
-    color: #f3f3f3;
+    color: #8f8f8f;
 
     border-radius: 9px;
   }
