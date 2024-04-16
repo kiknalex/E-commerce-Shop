@@ -30,7 +30,7 @@ const Products = () => {
           })
         )
       )
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   }, [category]);
   const productsList = (products) => {
     return useMemo(

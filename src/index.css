@@ -12,4 +12,5 @@
 @import "./styles/reviews.css";
 @import "./styles/footer.css";
 @import "./styles/products/products.css";
+@import "./styles/products/filter.css";
 @import "react-range-slider-input/dist/style.css";
