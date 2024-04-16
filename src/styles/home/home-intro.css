@@ -2,8 +2,7 @@
   .flex-home {
     display: flex;
     height: 80vh;
-    
-    margin-top: 50px;
+    padding-top: 50px;
   }
 
   .home-intro-description {

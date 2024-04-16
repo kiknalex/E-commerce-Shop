@@ -1,4 +1,8 @@
 @layer component {
+  .home-page {
+    background-color: var(--background-color);
+    padding-bottom: 200px;
+  }
   .home-category {
     margin-block: 10px;
     display: flex;
