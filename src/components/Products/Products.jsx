@@ -5,14 +5,16 @@ import RangeSlider from "react-range-slider-input";
 import ButtonSize from "../Misc/ButtonSize";
 import Path from "./Path";
 import { capitalize } from "../Helpers/Helpers";
+const PRODUCTS_NUMBER = 9;
+
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [price, setPrice] = useState({ min: 0, max: 1000 });
   const [size, setSize] = useState([]);
   const [filterOptions, setFilterOptions] = useState({ price, size });
   const [isSortOpen, setIsSortOpen] = useState(false);
-  const [activePage, setActivePage] = useState(1);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [activePage, setActivePage] = useState(1);
   const category = useParams();
 
   useEffect(() => {
@@ -50,8 +52,8 @@ const Products = () => {
             return false;
           })
           .map((product, index) => {
-            const startIndex = (activePage - 1) * 9;
-            const endIndex = activePage * 9;
+            const startIndex = (activePage - 1) * PRODUCTS_NUMBER;
+            const endIndex = activePage * PRODUCTS_NUMBER;
             if (index + 1 > startIndex && index < endIndex) {
               return <CategoryProduct key={product.id} {...product} />;
             }
@@ -100,7 +102,7 @@ const Products = () => {
   };
 
   return (
-    <main id="products-page" className="products-page">
+    <main className="products-page">
       <Path />
       <div className="container products-container-grid">
         <div
@@ -113,7 +115,11 @@ const Products = () => {
         <div className={`filters-container ${isFilterOpen ? "opened" : ""}`}>
           <div className="filters-heading">
             <h2>Filters</h2>
-            <button aria-label="close filter" className="btn-modal-close" onClick={() => setIsFilterOpen(false)}>
+            <button
+              aria-label="close filter"
+              className="btn-modal-close"
+              onClick={() => setIsFilterOpen(false)}
+            >
               <i className="fa-solid fa-xmark fa-2xl"></i>
             </button>
           </div>
@@ -231,7 +237,7 @@ const Products = () => {
                 />
               </button>
               <p className="text--sm text--gray products-number">
-                Showing {9 * (activePage - 1)}-{9 * activePage} of{" "}
+                Showing {PRODUCTS_NUMBER * (activePage - 1)}-{PRODUCTS_NUMBER * activePage} of{" "}
                 {products.length} products
               </p>
               <div
@@ -243,7 +249,7 @@ const Products = () => {
               >
                 <button onClick={handleSortClick} className="btn-dropdown-sort">
                   Sort By
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <i className="fa-solid fa-chevron-down"></i>
                 </button>
                 <div className={`dropdown-sort ${isSortOpen ? "open" : ""}`}>
                   <ul className="dropdown-sort-list">
@@ -286,23 +292,23 @@ const Products = () => {
                   className="fa-solid fa-arrow-left fa-lg arrow"
                   onClick={() => handlePageChange("minus")}
                 ></i>
-              </span>{" "}
+              </span> 
               Previous
             </button>
             <ol className="pages-list">
               {products.map((product, index, array) => {
-                if ((index + 1) % 9 === 0) {
+                if ((index + 1) % PRODUCTS_NUMBER === 0) {
                   return (
                     <li key={index}>
                       <button
                         className={`page-number ${
-                          activePage === (index + 1) / 9
+                          activePage === (index + 1) / PRODUCTS_NUMBER
                             ? "page-number-active"
                             : ""
                         }`}
-                        onClick={() => setActivePage((index + 1) / 9)}
+                        onClick={() => setActivePage((index + 1) / PRODUCTS_NUMBER)}
                       >
-                        {(index + 1) / 9}
+                        {(index + 1) / PRODUCTS_NUMBER}
                       </button>
                     </li>
                   );
@@ -311,15 +317,15 @@ const Products = () => {
                     <li key={index}>
                       <button
                         className={`page-number ${
-                          activePage === Math.ceil((index + 1) / 9)
+                          activePage === Math.ceil((index + 1) / PRODUCTS_NUMBER)
                             ? "page-number-active"
                             : ""
                         }`}
                         onClick={() =>
-                          setActivePage(Math.ceil((index + 1) / 9))
+                          setActivePage(Math.ceil((index + 1) / PRODUCTS_NUMBER))
                         }
                       >
-                        {Math.ceil(array.length / 9)}
+                        {Math.ceil(array.length / PRODUCTS_NUMBER)}
                       </button>
                     </li>
                   );
@@ -328,11 +334,11 @@ const Products = () => {
               })}
             </ol>
             <button
-              disabled={activePage === Math.ceil(products.length / 9)}
+              disabled={activePage === Math.ceil(products.length / PRODUCTS_NUMBER)}
               className="change-page"
               onClick={() => setActivePage((prevPage) => prevPage + 1)}
             >
-              Next{" "}
+              Next 
               <span>
                 <i className="fa-solid fa-arrow-right fa-lg arrow"></i>
               </span>

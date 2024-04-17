@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CategoryProduct from "./CategoryProduct";
 const HomeCategory = ({ title, category }) => {
-    console.log(category);
   const [productList, setProductList] = useState([]);
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}?limit=4`)
