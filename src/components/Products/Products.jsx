@@ -4,7 +4,7 @@ import CategoryProduct from "../Home/HomeCategory/CategoryProduct";
 import RangeSlider from "react-range-slider-input";
 import ButtonSize from "../Misc/ButtonSize";
 import Path from "./Path";
-import {capitalize} from "../Helpers/Helpers";
+import { capitalize } from "../Helpers/Helpers";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [price, setPrice] = useState({ min: 0, max: 1000 });
@@ -12,6 +12,7 @@ const Products = () => {
   const [filterOptions, setFilterOptions] = useState({ price, size });
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [activePage, setActivePage] = useState(1);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
   const category = useParams();
 
   useEffect(() => {
@@ -87,6 +88,7 @@ const Products = () => {
       price: { ...price },
       size: [...size],
     });
+    setIsFilterOpen(false);
   };
   const handleSortClick = () => {
     setIsSortOpen((isSortOpen) => !isSortOpen);
@@ -101,15 +103,18 @@ const Products = () => {
     <main id="products-page" className="products-page">
       <Path />
       <div className="container products-container-grid">
-        <div className="filters-container">
+        <div
+          onTouchStart={() => setIsFilterOpen(false)}
+          onClick={() => setIsFilterOpen(false)}
+          className={`outside-hamburger-click-close ${
+            isFilterOpen ? "opened" : ""
+          }`}
+        ></div>
+        <div className={`filters-container ${isFilterOpen ? "opened" : ""}`}>
           <div className="filters-heading">
             <h2>Filters</h2>
-            <button
-              disabled
-              aria-label="filter-disabled"
-              className="btn-search btn-uninteractive"
-            >
-              <img src="/filterIconDisabled.png" alt="" />
+            <button aria-label="close filter" className="btn-modal-close" onClick={() => setIsFilterOpen(false)}>
+              <i className="fa-solid fa-xmark fa-2xl"></i>
             </button>
           </div>
           <div>
@@ -209,9 +214,26 @@ const Products = () => {
         </div>
         <div className="products-container">
           <div className="products-heading">
-            <h1 className="title">{category.category && capitalize(category.category)}</h1>
+            <h1 className="title">
+              {category.category && capitalize(category.category)}
+            </h1>
             <div className="products-sort">
-              <p className="text--sm text--gray">Showing {9 * (activePage - 1)}-{9 * activePage} of {products.length} products</p>
+              <button
+                onClick={() => setIsFilterOpen((prevState) => !prevState)}
+                aria-label="open filters"
+                className="btn-search btn-filters-mobile"
+              >
+                <img
+                  src="/filterIconEnabled.png"
+                  width="32"
+                  height="32"
+                  alt=""
+                />
+              </button>
+              <p className="text--sm text--gray products-number">
+                Showing {9 * (activePage - 1)}-{9 * activePage} of{" "}
+                {products.length} products
+              </p>
               <div
                 className="dropdown-sort-container"
                 onBlur={(e) =>

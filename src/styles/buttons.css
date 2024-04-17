@@ -54,6 +54,23 @@
     width: 100%;
     padding-block: 5px;
   }
+
+  .btn-filters-mobile {
+    width: 32px;
+    height: 32px;
+    display: none;
+  }
+  .btn-modal-close {
+    display: none;
+  }
+  @media (max-width: 1060px) {
+    .btn-filters-mobile {
+      display: initial;
+    }
+    .btn-modal-close {
+      display: initial;
+    }
+  }
   @media (max-width: 760px) {
     .btn-pill {
       max-width: none;
@@ -63,5 +80,6 @@
     .btn-hamburger {
       display: initial;
     }
+    
   }
 }

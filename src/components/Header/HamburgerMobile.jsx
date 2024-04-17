@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-const HamburgerMobile = ({ mobileMenuShow, onClick, onPointerLeave }) => {
+const HamburgerMobile = ({ mobileMenuShow, onClick }) => {
   return (
     <>
       <div
@@ -9,7 +9,7 @@ const HamburgerMobile = ({ mobileMenuShow, onClick, onPointerLeave }) => {
       ></div>
 
       <nav
-        onPointerLeave={onPointerLeave}
+        
         className={`mobile-hamburger-container ${mobileMenuShow ? "opened" : ""}`}
       >
         <button onClick={onClick} aria-label="close" type="button" className="btn-modal-close">

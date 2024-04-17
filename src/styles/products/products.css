@@ -110,5 +110,8 @@
     .products-list {
       grid-template-columns: 1fr 1fr;
     }
+    .products-number {
+      display: none;
+    }
   }
 }
