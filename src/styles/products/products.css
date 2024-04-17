@@ -23,6 +23,7 @@
   .products-heading {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 50px;
   }
   .products-sort {
     display: flex;
@@ -112,6 +113,10 @@
     }
     .products-number {
       display: none;
+    }
+    
+    .products-sort {
+      gap: 0px;
     }
   }
 }

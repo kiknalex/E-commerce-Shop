@@ -5,8 +5,8 @@ const Path = () => {
    
     return (
         <div className="path-links container">
-            <Link to="/">Home</Link>
-            {path.category && <Link to={path.category}>{capitalize(path.category)}</Link>}
+            <Link to="/" className="text--sm">Home</Link>
+            {path.category   && <Link to={path.category} className="text--sm">{capitalize(path.category)}</Link>}
         </div>
     )
 }
