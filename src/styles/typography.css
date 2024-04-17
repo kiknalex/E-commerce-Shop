@@ -81,6 +81,8 @@
     .text--xl {
       font-size: 1.5rem;
     }
-    
+    .text--sm {
+      font-size: 0.75rem;
+    }
   }
 }

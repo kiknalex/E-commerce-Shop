@@ -66,4 +66,9 @@
       .filter-apply {
         margin-top: 20px;
       }
+      @media (max-width: 1060px) {
+        .filters-container {
+          display: none;
+        }
+      }
 }

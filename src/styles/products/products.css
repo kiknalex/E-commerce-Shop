@@ -5,8 +5,8 @@
     font-family: Satoshi, system-ui;
   }
   .products-page h1,
-  h2,
-  h3 {
+  .products-page h2,
+  .products-page h3 {
     font-family: Satoshi, system-ui;
   }
   .products-container-grid {
@@ -94,5 +94,21 @@
   .page-number-active {
     color: black;
     background-color: #cacaca;
+  }
+
+  @media (max-width: 1060px) {
+    .products-container-grid {
+      grid-template-columns: 1fr;
+    }
+    .products-list {
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+  @media (max-width: 760px) {
+    .products-list {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }

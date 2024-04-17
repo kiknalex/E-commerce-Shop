@@ -209,9 +209,9 @@ const Products = () => {
         </div>
         <div className="products-container">
           <div className="products-heading">
-            <h1>{category.category && capitalize(category.category)}</h1>
+            <h1 className="title">{category.category && capitalize(category.category)}</h1>
             <div className="products-sort">
-              <p>Showing {9 * (activePage - 1)}-{9 * activePage} of {products.length} products</p>
+              <p className="text--sm text--gray">Showing {9 * (activePage - 1)}-{9 * activePage} of {products.length} products</p>
               <div
                 className="dropdown-sort-container"
                 onBlur={(e) =>
