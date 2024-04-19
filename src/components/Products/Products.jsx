@@ -29,7 +29,7 @@ const Products = () => {
           newProducts.map((product) => {
             return {
               ...product,
-              size: ["small", "medium", "big"][Math.floor(Math.random() * 3)], // add fake size to the product list for demonstration purposes
+              size: ["small", "medium", "big"][Math.floor(Math.random() * 3)], // add random size to the product list for demonstration purposes
             };
           })
         )
@@ -55,7 +55,7 @@ const Products = () => {
             const startIndex = (activePage - 1) * PRODUCTS_NUMBER;
             const endIndex = activePage * PRODUCTS_NUMBER;
             if (index + 1 > startIndex && index < endIndex) {
-              return <CategoryProduct key={product.id} {...product} />;
+              return <Link to={`${category.category}/${product.id}`}><CategoryProduct key={product.id} {...product} /></Link>;
             }
           }),
       [products, filterOptions, activePage]
@@ -112,7 +112,8 @@ const Products = () => {
             isSizeActive,
             isFilterOpen,
             handlePriceEnter,
-            price
+            price,
+            setPrice
           }}
         />
         <div className="products-container">

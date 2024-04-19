@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import RangeSlider from "react-range-slider-input";
 import ButtonSize from "../Misc/ButtonSize";
 const FiltersSidebar = ({
@@ -7,7 +7,8 @@ const FiltersSidebar = ({
   isSizeActive,
   isFilterOpen,
   handlePriceEnter,
-  price
+  price,
+  setPrice,
 }) => {
   return (
     <>
@@ -117,6 +118,7 @@ const FiltersSidebar = ({
             </li>
           </ul>
         </div>
+
         <button
           className="btn-pill btn-black filter-apply"
           onClick={handleFilterClick}
