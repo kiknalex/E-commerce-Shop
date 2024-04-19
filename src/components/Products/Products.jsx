@@ -55,7 +55,7 @@ const Products = () => {
             const startIndex = (activePage - 1) * PRODUCTS_NUMBER;
             const endIndex = activePage * PRODUCTS_NUMBER;
             if (index + 1 > startIndex && index < endIndex) {
-              return <Link to={`${params.category}/${product.id}`} key={product.id}><CategoryProduct  {...product} /></Link>;
+              return <Link to={`${params.category}/${product.id}`} key={product.id}><CategoryProduct key={product.id} {...product} /></Link>;
             }
           }),
       [products, filterOptions, activePage]

@@ -1,0 +1,27 @@
+@layer component {
+    .product-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .gallery {
+        flex: 1;
+        display: flex;
+    }
+    .product-info {
+        flex: 1;
+    }
+    .gallery-thumbnails {
+        display: flex;
+        flex-direction: column;
+        order: -1;
+    }
+    .main-thumbnail {
+        height: 300px;
+        width: auto;
+    }
+    .small-thumbnail {
+        height: 100px;
+        width: auto;
+    }
+}
