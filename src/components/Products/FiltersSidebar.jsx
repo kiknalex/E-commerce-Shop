@@ -9,6 +9,7 @@ const FiltersSidebar = ({
   handlePriceEnter,
   price,
   setPrice,
+  setIsFilterOpen
 }) => {
   return (
     <>

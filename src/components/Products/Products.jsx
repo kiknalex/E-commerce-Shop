@@ -15,12 +15,12 @@ const Products = () => {
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [activePage, setActivePage] = useState(1);
-  const category = useParams();
+  const params = useParams();
 
   useEffect(() => {
     fetch(
       `https://fakestoreapi.com/products${
-        category.category ? `/category/${category.category}` : ""
+        params.category ? `/category/${params.category}` : ""
       }`
     )
       .then((response) => response.json())
@@ -35,7 +35,7 @@ const Products = () => {
         )
       )
       .catch((error) => console.error(error));
-  }, [category]);
+  }, [params]);
   const productsList = (products) => {
     return useMemo(
       () =>
@@ -55,7 +55,7 @@ const Products = () => {
             const startIndex = (activePage - 1) * PRODUCTS_NUMBER;
             const endIndex = activePage * PRODUCTS_NUMBER;
             if (index + 1 > startIndex && index < endIndex) {
-              return <Link to={`${category.category}/${product.id}`}><CategoryProduct key={product.id} {...product} /></Link>;
+              return <Link to={`${params.category}/${product.id}`} key={product.id}><CategoryProduct  {...product} /></Link>;
             }
           }),
       [products, filterOptions, activePage]
@@ -119,7 +119,7 @@ const Products = () => {
         <div className="products-container">
           <div className="products-heading">
             <h1 className="title">
-              {category.category && capitalize(category.category)}
+              {params.category && capitalize(params.category)}
             </h1>
             <div className="products-sort">
               <button
