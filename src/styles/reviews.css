@@ -16,7 +16,11 @@
     margin-left: 20px;
   }
 
-  .fa-star {
+  .rating {
+    margin-block: 5px;
+  }
+  .fa-star,
+  .fa-solid {
     color: orange;
     padding-inline: 2px;
   }

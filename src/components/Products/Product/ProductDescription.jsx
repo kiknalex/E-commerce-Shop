@@ -1,5 +1,6 @@
-import SizeSelector from "../SizeSelector";
 import { useState } from "react";
+import SizeSelector from "../SizeSelector";
+import StarRating from "../../Home/Reviews/StarRating";
 const ProductDescription = ({ details }) => {
   const [selectedSize, setSelectedSize] = useState("");
 
@@ -19,7 +20,7 @@ const ProductDescription = ({ details }) => {
     <section className="product-info">
       <div className="product-description">
         <h1>{details.title}</h1>
-        <p>{details.rating.rate}</p>
+        <StarRating rating={details.rating.rate} />
       </div>
       <SizeSelector
         handleSizeClick={handleSizeClick}
