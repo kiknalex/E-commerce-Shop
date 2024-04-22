@@ -56,13 +56,15 @@
     font-size: 0.75rem;
   }
   .text--gray {
-    opacity: 70%;
+    opacity: 80%;
   }
   .text--bold {
     font-weight: bold;
     line-height: 1.77;
   }
-
+  .text--marginless {
+    margin: 0;
+  }
   @media (max-width: 1060px) {
     .title--lg {
       font-size: 3rem;
