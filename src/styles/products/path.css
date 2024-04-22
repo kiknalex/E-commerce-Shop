@@ -3,6 +3,7 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    margin-bottom: 20px;
   }
   .path-links > a:not(:last-child) {
     color: #8f8f8f;
