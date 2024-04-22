@@ -15,12 +15,12 @@ const Product = () => {
       .then((data) => setProductDetails(data))
       .catch((error) => console.error(error));
   }, [params.id]);
-
+  // using random images because test api provides only 1
   return (
     <main className="">
       <Path />
-      <div className="product-container container">
-        {productDetails.image && <Gallery  images={[productDetails.image,"https://picsum.photos/id/21/600/900", "https://picsum.photos/id/1/600/900"]} />}
+      <div className="product-container container"> 
+        {productDetails.image && <Gallery mainImage={productDetails.image}  images={[productDetails.image,"https://picsum.photos/id/21/600/900", "https://picsum.photos/id/1/600/900"]} />} 
         <ProductDescription details={productDetails} />
       </div>
     </main>

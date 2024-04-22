@@ -21,6 +21,8 @@ const ProductDescription = ({ details }) => {
       <div className="product-description">
         <h1>{details.title}</h1>
         <StarRating rating={details.rating.rate} />
+        <p>{details.price} $</p>
+        <p>{details.description}</p>
       </div>
       <SizeSelector
         handleSizeClick={handleSizeClick}

@@ -11,7 +11,7 @@ const Gallery = ({ mainImage, images }) => {
     <div className="gallery">
       <img
         src={currentImage}
-        alt=""
+        alt="Main thumbnail"
         width="600"
         height="900"
         className="thumbnail-main"
