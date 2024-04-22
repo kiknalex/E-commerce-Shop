@@ -17,7 +17,7 @@
   
   .product-info > :not(:last-child) {
 
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--hr-border-color);
   }
   .product-description {
     padding-block: 15px;

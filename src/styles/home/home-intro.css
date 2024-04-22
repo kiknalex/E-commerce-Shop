@@ -40,7 +40,7 @@
   }
   .company-stats-grid > div:not(:last-child) {
     padding-right: 10px;
-    border-right: 1px solid rgba(0, 0, 0, 0.171);
+    border-right: 1px solid var(--hr-border-color);
   }
   .brand-breakline {
     background-color: black;

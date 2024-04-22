@@ -44,7 +44,7 @@
   .category-hr {
     border: none;
     height: 1px;
-    background-color: #d3d3d3;
+    background-color: var(--hr-border-color);
   }
   .category-heading {
     margin-block: 30px;

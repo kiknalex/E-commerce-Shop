@@ -2,6 +2,7 @@
     :root {
         --footer-subscribe-height: 160px;
         --background-color: #F2F0F1;
+        --hr-border-color: #d3d3d3;
     }
 
     *,
