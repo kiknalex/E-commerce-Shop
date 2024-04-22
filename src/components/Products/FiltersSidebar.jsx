@@ -9,7 +9,7 @@ const FiltersSidebar = ({
   handlePriceEnter,
   price,
   setPrice,
-  setIsFilterOpen
+  setIsFilterOpen,
 }) => {
   return (
     <>
@@ -90,8 +90,13 @@ const FiltersSidebar = ({
             />
           </div>
         </div>
-        <SizeSelector handleSizeClick={handleSizeClick} isSizeActive={isSizeActive} />
-
+        <div className="filter-sizes">
+          <h3>Size</h3>
+          <SizeSelector
+            handleSizeClick={handleSizeClick}
+            isSizeActive={isSizeActive}
+          />
+        </div>
         <button
           className="btn-pill btn-black filter-apply"
           onClick={handleFilterClick}

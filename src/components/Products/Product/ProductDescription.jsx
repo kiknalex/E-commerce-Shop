@@ -24,10 +24,13 @@ const ProductDescription = ({ details }) => {
         <p className="text--lg text--bold text--marginless">${details.price}</p>
         <p className="text--gray text--marginless">{details.description}</p>
       </div>
-      <SizeSelector
-        handleSizeClick={handleSizeClick}
-        isSizeActive={isSizeActive}
-      />
+      <div className="filter-sizes">
+        <h2 className="text--sm text--gray">Choose size</h2>
+        <SizeSelector
+          handleSizeClick={handleSizeClick}
+          isSizeActive={isSizeActive}
+        />
+      </div>
       <div className="add-cart"></div>
     </section>
   );
