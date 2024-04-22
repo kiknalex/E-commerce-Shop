@@ -4,7 +4,6 @@
     padding-bottom: 200px;
     font-family: Satoshi, system-ui;
   }
-  .products-page h1,
   .products-page h2,
   .products-page h3 {
     font-family: Satoshi, system-ui;
@@ -13,7 +12,6 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 20px;
-    
   }
   .products-list {
     display: grid;

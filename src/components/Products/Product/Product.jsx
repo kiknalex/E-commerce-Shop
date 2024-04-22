@@ -17,7 +17,7 @@ const Product = () => {
   }, [params.id]);
   // using random images because test api provides only 1
   return (
-    <main className="">
+    <main className="products-page">
       <Path />
       <div className="product-container container"> 
         {productDetails.image && <Gallery mainImage={productDetails.image}  images={[productDetails.image,"https://picsum.photos/id/21/600/900", "https://picsum.photos/id/1/600/900"]} />} 
