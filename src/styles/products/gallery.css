@@ -1,0 +1,33 @@
+@layer component {
+    .gallery {
+        flex: 1;
+        display: flex;
+        gap: 10px;
+      }
+    .thumbnails-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        order: -1;
+      }
+      .thumbnail-main {
+        width: 400px;
+        height: 530px;
+        border-radius: 9px;
+        object-fit: cover;
+      }
+      .thumbnail-small {
+        width: 150px;
+        height: 150px;
+    
+        border-radius: 9px;
+      }
+      .thumbnail-button {
+        width: 150px;
+        height: 150px;
+        border-radius: 9px;
+      }
+      .active-thumbnail {
+        border: 1px solid black;
+      }
+}
