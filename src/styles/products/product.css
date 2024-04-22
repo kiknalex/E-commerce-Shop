@@ -3,14 +3,28 @@
     display: flex;
     justify-content: space-between;
     gap: 30px;
+    padding-bottom: var(--footer-subscribe-height);
   }
   .gallery {
     flex: 1;
     display: flex;
     gap: 10px;
   }
+  
   .product-info {
     flex: 1;
+  }
+  
+  .product-info > :not(:last-child) {
+
+    border-bottom: 1px solid black;
+  }
+  .product-description {
+    padding-block: 15px;
+  }
+  .filter-sizes {
+    padding-block: 15px;
+    text-align: left;
   }
   .thumbnails-gallery {
     display: flex;
