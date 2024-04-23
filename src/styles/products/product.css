@@ -2,6 +2,7 @@
   .product-page {
     padding-bottom: var(--footer-subscribe-height);
   }
+ 
   .product-container {
     display: flex;
     justify-content: space-between;
