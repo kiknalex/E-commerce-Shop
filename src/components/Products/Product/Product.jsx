@@ -8,7 +8,6 @@ import HomeCategory from "../../Home/HomeCategory/HomeCategory";
 const Product = () => {
   const [productDetails, setProductDetails] = useState({});
   const params = useParams();
-  console.log(params);
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${params.id}`)
       .then((response) => response.json())
@@ -18,9 +17,9 @@ const Product = () => {
   // using random images because test api provides only 1
   return (
     <>
+      <Path />
       <main className="product-page container">
-        <Path />
-        <div className="product-container container">
+        <div className="product-container">
           {productDetails.image && (
             <Gallery
               mainImage={productDetails.image}
@@ -36,8 +35,6 @@ const Product = () => {
         <ProductInfoTabs details={productDetails} />
         <HomeCategory title="You might also like" category={params.category} />
       </main>
-
-      
     </>
   );
 };

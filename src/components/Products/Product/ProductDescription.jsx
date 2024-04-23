@@ -6,7 +6,6 @@ const ProductDescription = ({ details }) => {
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
-    console.log(selectedSize);
   };
 
   const isSizeActive = (size) => {

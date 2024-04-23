@@ -20,7 +20,7 @@ const Gallery = ({ mainImage, images }) => {
         {images.map((image, index) => (
           <button
             key={index}
-            className={`thumbnail-button ${currentImage === image ? 'active-thumbnail' : ''}`}
+            className={`thumbnail-button `}
             onClick={() => handleThumbnailClick(image)}
             aria-label={`thumbnail ${index}`}
           >
@@ -29,7 +29,7 @@ const Gallery = ({ mainImage, images }) => {
               alt=""
               width="150"
               height="150"
-              className="thumbnail-small"
+              className={`thumbnail-small ${currentImage === image ? 'active-thumbnail' : ''}`}
             />
           </button>
         ))}

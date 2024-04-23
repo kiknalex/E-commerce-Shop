@@ -60,5 +60,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
-
+  
+  @media (max-width: 1060px) {
+    .product-container {
+      flex-direction: column;
+    }
+  }
 }

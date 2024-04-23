@@ -1,6 +1,7 @@
 @layer component {
   .gallery {
     display: flex;
+    height: 530px;
     gap: 10px;
   }
   .thumbnails-gallery {
@@ -13,20 +14,36 @@
     width: 400px;
     height: 530px;
     border-radius: 9px;
-    object-fit: cover;
   }
   .thumbnail-small {
-    width: 100%;
-    height: 100%;
+    flex: 1;
     border-radius: 9px;
+    border: 1px solid transparent;
   }
   .thumbnail-button {
-    height: 150px;
+    display: contents;
     border-radius: 9px;
-    flex: 1;
-    border: 1px solid transparent;
   }
   .active-thumbnail {
     border-color: black;
+  }
+  @media (max-width: 1060px) {
+    .gallery {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+    }
+    .thumbnails-gallery {
+      flex-direction: row;
+      width: 100%;
+      gap: 0;
+    }
+    .thumbnail-main {
+      width: 100%;
+      order: -1;
+    }
+    .thumbnail-small {
+      width: 33%;
+    }
   }
 }
