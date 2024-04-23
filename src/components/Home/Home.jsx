@@ -33,9 +33,9 @@ const Home = () => {
         <div className="intro-bg"></div>
       </section>
       <BrandsBreakLine />
-      <section className="container home-categories">
+      <section className=" home-categories">
         <HomeCategory title="New Arrivals" category="men's clothing" />
-        <hr className="container category-hr" />
+        <hr className=" category-hr" />
         <HomeCategory title="Best Sellers" category="women's clothing" />
       </section>
       <PickCategorySquare />
