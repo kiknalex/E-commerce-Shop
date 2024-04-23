@@ -8,7 +8,7 @@ import HomeCategory from "../../Home/HomeCategory/HomeCategory";
 const Product = () => {
   const [productDetails, setProductDetails] = useState({});
   const params = useParams();
-
+  console.log(params);
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${params.id}`)
       .then((response) => response.json())
@@ -34,7 +34,7 @@ const Product = () => {
           <ProductDescription details={productDetails} />
         </div>
         <ProductInfoTabs details={productDetails} />
-        <HomeCategory title="You might also like" category={"jewelery"} />
+        <HomeCategory title="You might also like" category={params.category} />
       </main>
 
       

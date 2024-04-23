@@ -41,6 +41,11 @@
   }
 
  
+  .text,
+  .text--sm,
+  .text--xs {
+    font-family: Satoshi, system-ui;
+  }
 
   .text {
     font-size: 1.125rem;
