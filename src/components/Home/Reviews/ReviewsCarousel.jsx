@@ -42,6 +42,7 @@ const ReviewsCarousel = () => {
       <div ref={emblaRef} className="reviews-carousel-container">
         <div className="embla__container">
           {fakeReviews.map((review, id) => (
+            <div className="review-wrapper">
             <ReviewCard
               key={id}
               className="embla__slide"
@@ -49,6 +50,7 @@ const ReviewsCarousel = () => {
               lastNameLetter={review.lastNameLetter}
               text={review.text}
             />
+            </div>
           ))}
         </div>
       </div>

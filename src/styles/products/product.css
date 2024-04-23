@@ -1,22 +1,18 @@
 @layer component {
+  .product-page {
+    padding-bottom: var(--footer-subscribe-height);
+  }
   .product-container {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    padding-bottom: var(--footer-subscribe-height);
+    
   }
-  .gallery {
-    flex: 1;
-    display: flex;
-    gap: 10px;
-  }
-  
+
   .product-info {
     flex: 1;
   }
-  
   .product-info > :not(:last-child) {
-
     border-bottom: 1px solid var(--hr-border-color);
   }
   .product-description {
@@ -26,30 +22,41 @@
     padding-block: 15px;
     text-align: left;
   }
-  .thumbnails-gallery {
+  .product-tabs-container {
+    margin-top: 20px;
+  }
+  .product-tabs {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
   }
-  .thumbnail-main {
-    width: 400px;
-    height: 530px;
-    border-radius: 9px;
-    object-fit: cover;
+  .tab-link {
+    flex: 1;
+    text-align: center;
+    
+    border-bottom: 2px solid var(--hr-border-color);
   }
-  .thumbnail-small {
-    width: 150px;
-    height: 150px;
+  .tab-link.current {
+    border-bottom-color: black;
+  }
+  .tab-link-btn {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+  }
+  .tab-content {
+    display: none;
+    
+  }
+  .tab-content.current {
+    display: initial;
+  }
 
-    border-radius: 9px;
+  .product-reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
-  .thumbnail-button {
-    width: 150px;
-    height: 150px;
-    border-radius: 9px;
-  }
-  .active-thumbnail {
-    border: 1px solid black;
-  }
+
 }

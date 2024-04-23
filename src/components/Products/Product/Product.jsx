@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Path from "../Path";
 import Gallery from "./Gallery";
 import ProductDescription from "./ProductDescription";
-
+import ProductInfoTabs from "./ProductInfoTabs";
 const Product = () => {
   const [productDetails, setProductDetails] = useState({});
   const params = useParams();
@@ -23,6 +23,7 @@ const Product = () => {
         {productDetails.image && <Gallery mainImage={productDetails.image}  images={[productDetails.image,"https://picsum.photos/id/21/600/900", "https://picsum.photos/id/1/600/900"]} />} 
         <ProductDescription details={productDetails} />
       </div>
+    <ProductInfoTabs details={productDetails} />
     </main>
   );
 };
