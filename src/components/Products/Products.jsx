@@ -55,7 +55,11 @@ const Products = () => {
             const startIndex = (activePage - 1) * PRODUCTS_NUMBER;
             const endIndex = activePage * PRODUCTS_NUMBER;
             if (index + 1 > startIndex && index < endIndex) {
-              return <Link to={`${params.category}/${product.id}`} key={product.id}><CategoryProduct key={product.id} {...product} /></Link>;
+              return (
+                <Link to={`${params.category}/${product.id}`} key={product.id}>
+                  <CategoryProduct key={product.id} {...product} />
+                </Link>
+              );
             }
           }),
       [products, filterOptions, activePage]
@@ -102,7 +106,7 @@ const Products = () => {
   };
 
   return (
-    <main className="products-page">
+    <main id="main-content" className="products-page">
       <Path />
       <div className="container products-container-grid">
         <FiltersSidebar
@@ -113,7 +117,7 @@ const Products = () => {
             isFilterOpen,
             handlePriceEnter,
             price,
-            setPrice
+            setPrice,
           }}
         />
         <div className="products-container">
@@ -179,7 +183,11 @@ const Products = () => {
           <div className="products-list">
             {products && productsList(products)}
           </div>
-          {products && <PaginationButtons {...{activePage, setActivePage, products, PRODUCTS_NUMBER}} />}
+          {products && (
+            <PaginationButtons
+              {...{ activePage, setActivePage, products, PRODUCTS_NUMBER }}
+            />
+          )}
         </div>
       </div>
     </main>

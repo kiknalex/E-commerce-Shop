@@ -5,7 +5,7 @@ import ReviewsCarousel from "./Reviews/ReviewsCarousel";
 
 const Home = () => {
   return (
-    <main className="home-page">
+    <main id="main-content" className="home-page">
       <section className="flex-home container">
         <div className="home-intro-description">
           <h2 className="title--lg">FIND CLOTHES THAT MATCH YOUR STYLES</h2>

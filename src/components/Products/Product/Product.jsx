@@ -17,7 +17,7 @@ const Product = ({addToCart}) => {
   return (
     <>
       <Path />
-      <main className="product-page container">
+      <main id="main-content" className="product-page container">
         <div className="product-container">
           {productDetails.image && (
             <Gallery
