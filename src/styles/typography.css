@@ -60,6 +60,9 @@
   .text--xs {
     font-size: 0.75rem;
   }
+  .text--xxs {
+    font-size: 0.625rem;
+  }
   .text--gray {
     opacity: 80%;
   }

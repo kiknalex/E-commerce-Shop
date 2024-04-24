@@ -44,6 +44,7 @@
     border-radius: 30px;
     padding-inline: 15px;
     padding-block: 10px;
+    margin-inline: 40px;
     background-color: #f0f0f0;
   }
   .input-search {
@@ -138,8 +139,18 @@
     backdrop-filter: blur(2px);
     background-color: hsla(0, 0%, 7%, 0.36);
   }
-
-  /* ---------------media queries--------------- */
+  .card-item-count-container {
+    position: relative;
+  }
+  .cart-item-count {
+    position: absolute;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: yellow;
+    right: -5px;
+    bottom: -5px;
+  }
 
   @media (max-width: 1060px) {
     .flex-form {

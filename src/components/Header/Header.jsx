@@ -3,7 +3,7 @@ import SearchMobile from "./SearchMobile";
 import HeaderProfileBtn from "./HeaderProfileBtn";
 import HamburgerMobile from "./HamburgerMobile";
 import { useState } from "react";
-const Header = () => {
+const Header = ({cart, removeFromCart}) => {
   const [dropdownShow, setDropdownShow] = useState(false);
   const [mobileSearchShow, setMobileSearchShow] = useState(false);
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
@@ -41,6 +41,8 @@ const Header = () => {
 
         <HeaderProfileBtn
           handleMouseClick={() => handleMouseClick(setMobileSearchShow)}
+          cart={cart}
+          removeFromCart={removeFromCart}
         />
         <SearchMobile
           mobileSearchShow={mobileSearchShow}

@@ -12,6 +12,7 @@ function App() {
 
   const addToCart = (item, quantity, size) => {
     // Create a unique identifier for the item based on its ID and size
+    console.log(cart);
     const itemIdWithSize = `${item.id}-${size}`;
 
     const existingItemIndex = cart.findIndex(
