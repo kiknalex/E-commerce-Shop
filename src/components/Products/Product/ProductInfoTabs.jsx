@@ -12,7 +12,7 @@ const ProductInfoTabs = ({ details }) => {
     setActiveTab(index);
   };
   return (
-    <div className="container product-tabs-container">
+    <div className="product-tabs-container">
       <ul className="product-tabs">
         <li className={`tab-link ${activeTab === 0 ? "current" : ""}`}>
           <button className="tab-link-btn" onClick={() => handleTabChange(0)}>
@@ -55,7 +55,7 @@ const ProductInfoTabs = ({ details }) => {
           </button>
         </div>
         <div className={`tab-content ${activeTab === 2 ? "current" : ""}`}>
-  <h2>Q: Where Did My Shopping Cart Go?</h2>
+  <h2 className="text">Q: Where Did My Shopping Cart Go?</h2>
   <p>
     Product can no longer be purchased directly through SHOP.CO. The
     new SHOP.CO is a showcase for the full line of SHOP.CO
@@ -64,7 +64,7 @@ const ProductInfoTabs = ({ details }) => {
     SHOP.CO.
   </p>
 
-  <h2>
+  <h2 className="text">
     Q. Can I Still Return Product I Purchased Directly on SHOP.CO?
   </h2>
   <p>

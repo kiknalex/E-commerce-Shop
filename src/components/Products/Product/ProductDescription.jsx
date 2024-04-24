@@ -1,7 +1,8 @@
 import { useState } from "react";
 import SizeSelector from "../SizeSelector";
 import StarRating from "../../Home/Reviews/StarRating";
-const ProductDescription = ({ details }) => {
+import AddToCart from "./AddToCart";
+const ProductDescription = ({ details, addToCart }) => {
   const [selectedSize, setSelectedSize] = useState("");
 
   const handleSizeClick = (size) => {
@@ -30,7 +31,7 @@ const ProductDescription = ({ details }) => {
           isSizeActive={isSizeActive}
         />
       </div>
-      <div className="add-cart"></div>
+      <AddToCart initialQuantity={1}  item={details} addToCart={addToCart} size={selectedSize} clearSize={() => handleSizeClick("")}  />
     </section>
   );
 };

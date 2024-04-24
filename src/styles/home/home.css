@@ -86,7 +86,8 @@
     .grid-category-squares {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      
+      width: auto;
+      gap: 10px 0px;
     }
     .items-line-img {
       width: 40vw;

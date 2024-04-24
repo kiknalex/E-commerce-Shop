@@ -69,6 +69,7 @@
   .btn-modal-close {
     display: none;
   }
+  
   @media (max-width: 1060px) {
     .btn-filters-mobile {
       display: initial;

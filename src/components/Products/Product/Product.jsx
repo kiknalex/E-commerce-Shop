@@ -5,7 +5,7 @@ import Gallery from "./Gallery";
 import ProductDescription from "./ProductDescription";
 import ProductInfoTabs from "./ProductInfoTabs";
 import HomeCategory from "../../Home/HomeCategory/HomeCategory";
-const Product = () => {
+const Product = ({addToCart}) => {
   const [productDetails, setProductDetails] = useState({});
   const params = useParams();
   useEffect(() => {
@@ -14,7 +14,6 @@ const Product = () => {
       .then((data) => setProductDetails(data))
       .catch((error) => console.error(error));
   }, [params.id]);
-  // using random images because test api provides only 1
   return (
     <>
       <Path />
@@ -24,13 +23,13 @@ const Product = () => {
             <Gallery
               mainImage={productDetails.image}
               images={[
-                productDetails.image,
+                productDetails.image, // using random images because test api provides only 1
                 "https://picsum.photos/id/21/600/900",
                 "https://picsum.photos/id/1/600/900",
               ]}
             />
           )}
-          <ProductDescription details={productDetails} />
+          <ProductDescription details={productDetails} addToCart={addToCart} />
         </div>
         <ProductInfoTabs details={productDetails} />
         <HomeCategory title="You might also like" category={params.category} />
