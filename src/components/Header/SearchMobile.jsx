@@ -1,8 +1,8 @@
-const SearchMobile = ({ mobileSearchShow, onClick }) => {
+const SearchMobile = ({ mobileSearchShow, handleMouseClick }) => {
   return (
     <form action="" className={`mobile-search-container ${mobileSearchShow ? "opened" : ""}`}>
         <div className="mobile-search-close">
-        <button onClick={onClick} aria-label="close" type="button">
+        <button onClick={handleMouseClick} aria-label="close" type="button">
           <i className="fa-solid fa-xmark fa-2xl"></i>
         </button>
       </div>

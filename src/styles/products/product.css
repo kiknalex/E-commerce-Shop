@@ -82,6 +82,7 @@
     margin: 0;
   }
   .item-number[type="number"] {
+    appearance: none;
     -moz-appearance: textfield;
   }
   @media (max-width: 1060px) {

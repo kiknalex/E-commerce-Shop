@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-const HamburgerMobile = ({ mobileMenuShow, onClick }) => {
+const HamburgerMobile = ({ mobileMenuShow, handleMouseClick }) => {
   return (
     <>
       <div
-        onTouchStart={onClick}
-        onClick={onClick}
+        onTouchStart={handleMouseClick}
+        onClick={handleMouseClick}
         className={`outside-hamburger-click-close ${mobileMenuShow ? "opened" : ""}`}
       ></div>
 
@@ -12,7 +12,7 @@ const HamburgerMobile = ({ mobileMenuShow, onClick }) => {
         
         className={`mobile-hamburger-container ${mobileMenuShow ? "opened" : ""}`}
       >
-        <button onClick={onClick} aria-label="close" type="button" className="btn-modal-close">
+        <button onClick={handleMouseClick} aria-label="close" type="button" className="btn-modal-close">
           <i className="fa-solid fa-xmark fa-2xl"></i>
         </button>
         <ul className="flex-categories-mobile text--xl">

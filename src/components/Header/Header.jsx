@@ -40,14 +40,14 @@ const Header = () => {
         />
 
         <HeaderProfileBtn
-          onClick={() => handleMouseClick(setMobileSearchShow)}
+          handleMouseClick={() => handleMouseClick(setMobileSearchShow)}
         />
         <SearchMobile
           mobileSearchShow={mobileSearchShow}
-          onClick={() => handleMouseClick(setMobileSearchShow)}
+          handleMouseClick={() => handleMouseClick(setMobileSearchShow)}
         />
         <HamburgerMobile
-          onClick={() => handleMouseClick(setMobileMenuShow)}
+          handleMouseClick={() => handleMouseClick(setMobileMenuShow)}
           mobileMenuShow={mobileMenuShow}
         />
       </div>
