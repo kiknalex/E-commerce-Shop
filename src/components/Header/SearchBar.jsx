@@ -1,6 +1,6 @@
 const SearchBar = () => {
   return (
-    <form action="" className="search-bg flex-form">
+    <form action="" role="search" className="search-bg flex-form">
       <button className="btn-search" aria-label="Search">
         <img src="/search-btn.png" className="btn-img" alt="search" />
       </button>
