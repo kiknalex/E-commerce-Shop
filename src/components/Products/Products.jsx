@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import CategoryProduct from "../Home/HomeCategory/CategoryProduct";
 import FiltersSidebar from "./FiltersSidebar";
 import PaginationButtons from "./PaginationButtons";
@@ -16,7 +16,7 @@ const Products = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [activePage, setActivePage] = useState(1);
   const params = useParams();
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetch(
       `https://fakestoreapi.com/products${
@@ -24,7 +24,10 @@ const Products = () => {
       }`
     )
       .then((response) => response.json())
-      .then((newProducts) =>
+      .then((newProducts) => {
+        if (newProducts.length < 1) {
+          throw new Error("No data has been retrieved.");
+        }
         setProducts(
           newProducts.map((product) => {
             return {
@@ -32,9 +35,12 @@ const Products = () => {
               size: ["small", "medium", "big"][Math.floor(Math.random() * 3)], // add random size to the product list for demonstration purposes
             };
           })
-        )
-      )
-      .catch((error) => console.error(error));
+        );
+      })
+      .catch((error) => {
+        console.error(error);
+        navigate("/products");
+      });
   }, [params]);
   const productsList = (products) => {
     return useMemo(
