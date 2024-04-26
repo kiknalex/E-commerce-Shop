@@ -2,11 +2,11 @@
   .products-page {
     background-color: white;
     padding-bottom: 200px;
-    font-family: Satoshi, system-ui;
+    font-family: Satoshi-Variable, system-ui;
   }
   .products-page h2,
   .products-page h3 {
-    font-family: Satoshi, system-ui;
+    font-family: Satoshi-Variable, system-ui;
   }
   .products-container-grid {
     display: grid;
