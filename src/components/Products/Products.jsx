@@ -26,7 +26,7 @@ const Products = () => {
       .then((response) => response.json())
       .then((newProducts) => {
         if (newProducts.length < 1) {
-          throw new Error("No data has been retrieved.");
+          throw new Error("Data is empty.");
         }
         setProducts(
           newProducts.map((product) => {
@@ -42,6 +42,18 @@ const Products = () => {
         navigate("/products");
       });
   }, [params]);
+
+  useEffect(() => {
+    if (isFilterOpen) {
+      document.body.classList.add("body-noscroll");
+    } else {
+      document.body.classList.remove("body-noscroll");
+    }
+    return () => {
+      document.body.classList.remove("body-noscroll"); // Clean up on unmount
+    };
+  }, [isFilterOpen]);
+
   const productsList = (products) => {
     return useMemo(
       () =>
@@ -62,7 +74,7 @@ const Products = () => {
             const endIndex = activePage * PRODUCTS_NUMBER;
             if (index + 1 > startIndex && index < endIndex) {
               return (
-                <Link to={`${params.category}/${product.id}`} key={product.id}>
+                <Link to={`${product.category}/${product.id}`} key={product.id}>
                   <CategoryProduct key={product.id} {...product} />
                 </Link>
               );
@@ -124,6 +136,7 @@ const Products = () => {
             handlePriceEnter,
             price,
             setPrice,
+            setIsFilterOpen,
           }}
         />
         <div className="products-container">
