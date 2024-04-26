@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Header from "./components/Header/Header";
@@ -8,11 +8,15 @@ import Products from "./components/Products/Products";
 import Product from "./components/Products/Product/Product";
 import PageNotFound from "./components/Misc/PageNotFound";
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    () => JSON.parse(localStorage.getItem("cart")) ?? [] // lazy initial state, load local storage.
+  ); 
 
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
   const addToCart = (item, quantity, size) => {
-    // Create a unique identifier for the item based on its ID and size
-    console.log(cart);
+    // Create a unique ID for the item based on its ID and size
     const itemIdWithSize = `${item.id}-${size}`;
 
     const existingItemIndex = cart.findIndex(
