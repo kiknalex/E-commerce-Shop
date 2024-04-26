@@ -10,7 +10,7 @@ import PageNotFound from "./components/Misc/PageNotFound";
 function App() {
   const [cart, setCart] = useState(
     () => JSON.parse(localStorage.getItem("cart")) ?? [] // lazy initial state, load local storage.
-  ); 
+  );
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
