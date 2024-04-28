@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const HamburgerMobile = ({ mobileMenuShow, handleMouseClick }) => {
   return (
     <>
@@ -17,16 +18,16 @@ const HamburgerMobile = ({ mobileMenuShow, handleMouseClick }) => {
         </button>
         <ul className="flex-categories-mobile text--xl">
           <li>
-            <a href="#">Shop</a>
+            <Link to="/products">Shop</Link>
           </li>
           <li>
-            <a href="#">On Sale</a>
+          <Link to="/products">Best Sellers</Link>
           </li>
           <li>
-            <a href="#">New Arrivals</a>
+          <Link to="/products">New Arrivals</Link>
           </li>
           <li>
-            <a href="#">Brands</a>
+          <Link to="/products">Brands</Link>
           </li>
         </ul>
       </nav>

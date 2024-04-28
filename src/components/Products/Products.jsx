@@ -74,9 +74,9 @@ const Products = () => {
             const endIndex = activePage * PRODUCTS_NUMBER;
             if (index + 1 > startIndex && index < endIndex) {
               return (
-                <Link to={`${product.category}/${product.id}`} key={product.id}>
+                
                   <CategoryProduct key={product.id} {...product} />
-                </Link>
+                
               );
             }
           }),

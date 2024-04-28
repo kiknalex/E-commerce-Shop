@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 const HeaderCategories = ({ dropdownShow, handleMouseIn, handleMouseOut }) => {
   return (
@@ -9,16 +10,16 @@ const HeaderCategories = ({ dropdownShow, handleMouseIn, handleMouseOut }) => {
           onMouseOut={handleMouseOut}
         >
           <Dropdown dropdownShow={dropdownShow} />
-          <a href="">Shop</a>
+          <Link to="/products">Shop</Link>
         </li>
         <li>
-          <a href="">On Sale</a>
+          <Link to="/products">Best Sellers</Link>
         </li>
         <li>
-          <a href="">New Arrivals</a>
+          <Link to="/products">New Arrivals</Link>
         </li>
         <li>
-          <a href="">Brands</a>
+          <Link to="/products">Brands</Link>
         </li>
       </ul>
     </nav>
