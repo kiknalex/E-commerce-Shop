@@ -42,7 +42,7 @@
     margin-inline: 5px;
   }
   .btn-intro {
-    margin-block: 10px;
+    display: block;
   }
   .btn-hamburger {
     display: none;

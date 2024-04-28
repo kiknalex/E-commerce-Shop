@@ -3,6 +3,7 @@ import SearchMobile from "./SearchMobile";
 import HeaderProfileBtn from "./HeaderProfileBtn";
 import HamburgerMobile from "./HamburgerMobile";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Header = ({ cart, removeFromCart }) => {
   const [dropdownShow, setDropdownShow] = useState(false);
   const [mobileSearchShow, setMobileSearchShow] = useState(false);
@@ -34,9 +35,9 @@ const Header = ({ cart, removeFromCart }) => {
             >
               <img src="/hamburger.png" alt="s" />
             </button>
-            <a href="#" className="link-home-header" aria-label="Home">
+            <Link to="" className="link-home-header" aria-label="Home">
               <img className="link-home-img" src="/SHOP.CO.png" alt="" />
-            </a>
+            </Link>
           </div>
           <HeaderCategories
             handleMouseIn={handleMouseIn}

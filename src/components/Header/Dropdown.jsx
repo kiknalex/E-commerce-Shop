@@ -1,26 +1,28 @@
+import { Link } from "react-router-dom";
+
 const Dropdown = ({ dropdownShow }) => {
   return (
     <div className={`dropdown-container ${dropdownShow ? "active" : ""}`}>
       <div className={`dropdown-sections-flex ${dropdownShow ? "active" : ""}`}>
         <ul className="dropdown-items-flex">
-          <li>Shoes</li>
-          <li>T-shirts</li>
-          <li>Jackets</li>
+          <li><Link to="/products">Shoes</Link></li>
+          <li><Link to="/products">T-shirts</Link></li>
+          <li><Link to="/products">Jackets</Link></li>
         </ul>
         <ul className="dropdown-items-flex">
-          <li>Shoes</li>
-          <li>T-shirts</li>
-          <li>Jackets</li>
+          <li><Link to="/products">Shoes</Link></li>
+          <li><Link to="/products">T-shirts</Link></li>
+          <li><Link to="/products">Jackets</Link></li>
         </ul>
         <ul className="dropdown-items-flex">
-          <li>Shoes</li>
-          <li>T-shirts</li>
-          <li>Jackets</li>
+          <li><Link to="/products">Shoes</Link></li>
+          <li><Link to="/products">T-shirts</Link></li>
+          <li><Link to="/products">Jackets</Link></li>
         </ul>
         <ul className="dropdown-items-flex">
-          <li>Shoes</li>
-          <li>T-shirts</li>
-          <li>Jackets</li>
+          <li><Link to="/products">Shoes</Link></li>
+          <li><Link to="/products">T-shirts</Link></li>
+          <li><Link to="/products">Jackets</Link></li>
         </ul>
       </div>
     </div>

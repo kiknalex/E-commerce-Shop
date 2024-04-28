@@ -1,6 +1,8 @@
-const CategoryProduct = ({ title, price, category, description, image }) => {
+import { Link } from "react-router-dom";
+
+const CategoryProduct = ({ title, price, category, description, image, id }) => {
   return (
-    <div className="product-flex">
+    <Link to={`/products/${category}/${id}`} className="product-flex">
       <img
         src={image}
         alt=""
@@ -18,7 +20,7 @@ const CategoryProduct = ({ title, price, category, description, image }) => {
         <i className="fa-solid fa-star"></i>
         <i className="fa-solid fa-star"></i>
       </div>
-    </div>
+    </Link>
   );
 };
 

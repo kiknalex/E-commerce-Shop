@@ -2,7 +2,7 @@ import BrandsBreakLine from "../Misc/BrandsBreakLine";
 import HomeCategory from "./HomeCategory/HomeCategory";
 import PickCategorySquare from "./CategorySquares/PickCategorySquare";
 import ReviewsCarousel from "./Reviews/ReviewsCarousel";
-
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <main id="main-content" className="home-page">
@@ -14,7 +14,7 @@ const Home = () => {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <button className="btn-pill btn-black btn-intro">Shop Now</button>
+          <Link to="/products" className="btn-pill btn-black btn-intro">Shop Now</Link>
           <div className="company-stats-grid">
             <div>
               <p className="text--xl text--bold">200+</p>

@@ -50,7 +50,7 @@ function App() {
         ></Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
-
+    
       <Footer />
     </BrowserRouter>
   );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import CategoryProduct from "./CategoryProduct";
 const HomeCategory = ({ title, category }) => {
   const [productList, setProductList] = useState([]);
@@ -15,7 +16,7 @@ const HomeCategory = ({ title, category }) => {
           return <CategoryProduct key={product.id} {...product} />;
         })}
       </div>
-      <a className="btn-pill btn-white">View All</a>
+      <Link to="/products" className="btn-pill btn-white">View All</Link>
     </div>
   );
 };

@@ -1,6 +1,7 @@
-const CategorySquare = ({ category, imgSrc }) => {
+import { Link } from "react-router-dom";
+const CategorySquare = ({ title, category, imgSrc }) => {
   return (
-    <a className="bg-img">
+    <Link to={`products/${category}`} className="bg-img">
       <img
         src={imgSrc}
         alt=""
@@ -8,8 +9,8 @@ const CategorySquare = ({ category, imgSrc }) => {
         height="100"
         className="category-square-img"
       />
-      <h3 className="title--sm">{category}</h3>
-    </a>
+      <h3 className="title--sm">{title}</h3>
+    </Link>
   );
 };
 

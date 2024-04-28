@@ -6,10 +6,10 @@ const PickCategorySquare = () => {
       <div className="category-squares-container">
         <h2 className="category-heading title">Pick featured collections</h2>
         <div className="grid-category-squares">
-          <CategorySquare category={"Casual"} imgSrc={"/casual.jpg"} />
-          <CategorySquare category={"Formal"} imgSrc={"/formal.jpg"} />
-          <CategorySquare category={"Party"} imgSrc={"/party.jpg"} />
-          <CategorySquare category={"Gym"} imgSrc={"/gym.jpg"} />
+          <CategorySquare title={"Casual"} category="men's clothing" imgSrc={"/casual.jpg"} />
+          <CategorySquare title={"Formal"} category="women's clothing" imgSrc={"/formal.jpg"} />
+          <CategorySquare title={"Party"} category="jewelery" imgSrc={"/party.jpg"} />
+          <CategorySquare title={"Gym"} category="electronics" imgSrc={"/gym.jpg"} />
         </div>
       </div>
     </div>

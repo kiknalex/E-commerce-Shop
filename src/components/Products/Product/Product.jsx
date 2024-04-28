@@ -1,19 +1,26 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Path from "../Path";
 import Gallery from "./Gallery";
 import ProductDescription from "./ProductDescription";
 import ProductInfoTabs from "./ProductInfoTabs";
 import HomeCategory from "../../Home/HomeCategory/HomeCategory";
-const Product = ({addToCart}) => {
+const Product = ({ addToCart }) => {
   const [productDetails, setProductDetails] = useState({});
   const params = useParams();
+  const navigate = useNavigate();
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${params.id}`)
       .then((response) => response.json())
-      .then((data) => setProductDetails(data))
-      .catch((error) => console.error(error));
+      .then((data) => {
+        setProductDetails(data);
+      })
+      .catch((error) => {
+        navigate("/products");
+        console.error("Error fetching product details:", error);
+      });
   }, [params.id]);
+
   return (
     <>
       <Path />
