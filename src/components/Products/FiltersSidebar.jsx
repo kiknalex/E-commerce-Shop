@@ -32,21 +32,21 @@ const FiltersSidebar = ({
           </button>
         </div>
         <div>
-          <ul className="filter-categories">
+          <ul className="filter-categories" >
             <li>
-              <Link to="/products">All</Link>
+              <Link to="/products" onClick={() => setIsFilterOpen(false)}>All</Link>
             </li>
             <li>
-              <Link to="jewelery">Jewelery</Link>
+              <Link to="jewelery" onClick={() => setIsFilterOpen(false)}>Jewelery</Link>
             </li>
             <li>
-              <Link to="men's clothing">Men's clothing</Link>
+              <Link to="men's clothing" onClick={() => setIsFilterOpen(false)}>Men's clothing</Link>
             </li>
             <li>
-              <Link to="women's clothing">Women's clothing</Link>
+              <Link to="women's clothing" onClick={() => setIsFilterOpen(false)}>Women's clothing</Link>
             </li>
             <li>
-              <Link to="electronics">Electronics</Link>
+              <Link to="electronics" onClick={() => setIsFilterOpen(false)}>Electronics</Link>
             </li>
           </ul>
         </div>

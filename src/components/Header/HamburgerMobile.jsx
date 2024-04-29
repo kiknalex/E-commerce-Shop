@@ -18,16 +18,16 @@ const HamburgerMobile = ({ mobileMenuShow, handleMouseClick }) => {
         </button>
         <ul className="flex-categories-mobile text--xl">
           <li>
-            <Link to="/products">Shop</Link>
+            <Link to="/products" onClick={handleMouseClick}>Shop</Link>
           </li>
           <li>
-          <Link to="/products">Best Sellers</Link>
+          <Link to="/products" onClick={handleMouseClick}>Best Sellers</Link>
           </li>
           <li>
-          <Link to="/products">New Arrivals</Link>
+          <Link to="/products" onClick={handleMouseClick}>New Arrivals</Link>
           </li>
           <li>
-          <Link to="/products">Brands</Link>
+          <Link to="/products" onClick={handleMouseClick}>Brands</Link>
           </li>
         </ul>
       </nav>
