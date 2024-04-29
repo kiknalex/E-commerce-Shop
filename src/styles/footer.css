@@ -7,13 +7,12 @@
   .flex-footer h3 {
     font-family: satoshi, system-ui;
   }
-  
+
   .footer-container {
     background-color: #e3e3e3;
     padding-bottom: 50px;
     position: relative;
     padding-top: 150px;
-    
   }
   .description-container {
     flex: 1;
@@ -76,13 +75,13 @@
     color: black;
     background-color: white;
     opacity: 0.9;
+    padding-inline: 10px;
   }
   .subscribe-input-email {
     text-align: left;
+    padding-inline: 10px;
   }
-  .subscribe-btn {
-    text-align: left;
-  }
+
   .subscribe-input:hover {
     opacity: 1;
   }
