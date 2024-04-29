@@ -5,6 +5,7 @@ import {
   RouterProvider,
   createRoutesFromElements,
   Outlet,
+  ScrollRestoration
 } from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home/Home";
@@ -66,6 +67,7 @@ function Root({ cart, removeFromCart }) {
   return (
     <>
       <Header cart={cart} removeFromCart={removeFromCart} />
+      <ScrollRestoration />
       <Outlet />
       <Footer />
     </>
