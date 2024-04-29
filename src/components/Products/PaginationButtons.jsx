@@ -1,4 +1,4 @@
-const PaginationButtons = ({activePage, setActivePage, products, PRODUCTS_NUMBER}) => {
+const PaginationButtons = ({activePage, setActivePage, products, PRODUCTS_NUMBER, productsFilterFn}) => {
     return (
         <div className="pages-list-container">
             <button
@@ -15,7 +15,7 @@ const PaginationButtons = ({activePage, setActivePage, products, PRODUCTS_NUMBER
               Previous
             </button>
             <ol className="pages-list">
-              {products && products.map((product, index, array) => {
+              {products && products.filter(productsFilterFn).map((product, index, array) => {
                 if ((index + 1) % PRODUCTS_NUMBER === 0) {
                   return (
                     <li key={index}>

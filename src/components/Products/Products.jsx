@@ -54,21 +54,22 @@ const Products = () => {
     };
   }, [isFilterOpen]);
 
+  const productsFilterFn = (product) => {
+    if (
+      product.price >= filterOptions.price.min &&
+      product.price <= filterOptions.price.max &&
+      (filterOptions.size.length === 0 ||
+        filterOptions.size.includes(product.size))
+    ) {
+      return product;
+    }
+    return false;
+  }
   const productsList = (products) => {
     return useMemo(
       () =>
         products
-          .filter((product) => {
-            if (
-              product.price >= filterOptions.price.min &&
-              product.price <= filterOptions.price.max &&
-              (filterOptions.size.length === 0 ||
-                filterOptions.size.includes(product.size))
-            ) {
-              return product;
-            }
-            return false;
-          })
+          .filter(productsFilterFn)
           .map((product, index) => {
             const startIndex = (activePage - 1) * PRODUCTS_NUMBER;
             const endIndex = activePage * PRODUCTS_NUMBER;
@@ -113,6 +114,7 @@ const Products = () => {
       size: [...size],
     });
     setIsFilterOpen(false);
+    setActivePage(1);
   };
   const handleSortClick = () => {
     setIsSortOpen((isSortOpen) => !isSortOpen);
@@ -204,7 +206,7 @@ const Products = () => {
           </div>
           {products && (
             <PaginationButtons
-              {...{ activePage, setActivePage, products, PRODUCTS_NUMBER }}
+              {...{ activePage, setActivePage, products, PRODUCTS_NUMBER, productsFilterFn }}
             />
           )}
         </div>
