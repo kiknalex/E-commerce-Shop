@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  Route,
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Outlet,
+} from "react-router-dom";
 import "./index.css";
-import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
-import Footer from "./components/Footer/Footer";
 import Products from "./components/Products/Products";
 import Product from "./components/Products/Product/Product";
 import PageNotFound from "./components/Misc/PageNotFound";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
 function App() {
   const [cart, setCart] = useState(
     () => JSON.parse(localStorage.getItem("cart")) ?? [] // lazy initial state, load local storage.
@@ -36,10 +43,10 @@ function App() {
   const removeFromCart = (itemId) => {
     setCart(cart.filter((item) => item.id !== itemId));
   };
-  return (
-    <BrowserRouter>
-      <Header cart={cart} removeFromCart={removeFromCart} />
-      <Routes>
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route element={<Root cart={cart} removeFromCart={removeFromCart} />}>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />}>
           <Route path=":category" element={<Products />}></Route>
@@ -49,10 +56,19 @@ function App() {
           element={<Product addToCart={addToCart} />}
         ></Route>
         <Route path="*" element={<PageNotFound />}></Route>
-      </Routes>
-    
+      </Route>
+    )
+  );
+  return <RouterProvider router={router} />;
+}
+
+function Root({ cart, removeFromCart }) {
+  return (
+    <>
+      <Header cart={cart} removeFromCart={removeFromCart} />
+      <Outlet />
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 
