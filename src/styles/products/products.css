@@ -100,7 +100,6 @@
       grid-template-columns: 1fr;
     }
     .products-list {
-      grid-template-columns: 1fr 1fr 1fr;
       justify-content: center;
       gap: 10px;
     }
@@ -112,7 +111,7 @@
     .products-number {
       display: none;
     }
-    
+
     .products-sort {
       gap: 0px;
     }
