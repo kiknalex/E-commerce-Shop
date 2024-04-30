@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Gallery = ({ mainImage, images }) => {
   const [currentImage, setCurrentImage] = useState(mainImage);
 
+  useEffect(() => {
+    setCurrentImage(mainImage);
+  }, [mainImage])
   const handleThumbnailClick = (image) => {
     setCurrentImage(image);
   };
