@@ -5,8 +5,10 @@ const FooterSubscribe = () => {
         Stay upto date about our latest offers
       </h4>
       <form className="subscribe-form" aria-label="Subscribe to newsletter">
+        <label hidden htmlFor="Newsletter subscribe email">Enter your email:</label>
         <input
           type="email"
+          name="Newsletter subscribe email"
           className="subscribe-input btn-pill subscribe-input-email"
           placeholder="Enter your email address..."
           aria-label="Enter your email address"
