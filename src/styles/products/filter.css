@@ -43,8 +43,6 @@
     width: 100%;
   }
 
- 
-
   .sizes-list {
     display: flex;
     flex-wrap: wrap;
@@ -61,14 +59,14 @@
     width: 60%;
     align-self: center;
   }
-  @layer page {
-    .range-slider .range-slider__range {
-      background: black;
-    }
-    .range-slider .range-slider__thumb {
-      background: black;
-    }
+
+  .range-slider .range-slider__range {
+    background: black !important;
   }
+  .range-slider .range-slider__thumb {
+    background: black !important;
+  }
+
   @media (max-width: 1060px) {
     .filters-container {
       background-color: white;
