@@ -17,6 +17,7 @@ const Products = () => {
   const [activePage, setActivePage] = useState(1);
   const params = useParams();
   const navigate = useNavigate();
+  
   useEffect(() => {
     fetch(
       `https://fakestoreapi.com/products${
@@ -75,9 +76,7 @@ const Products = () => {
             const endIndex = activePage * PRODUCTS_NUMBER;
             if (index + 1 > startIndex && index < endIndex) {
               return (
-                
                   <CategoryProduct key={product.id} {...product} />
-                
               );
             }
           }),
@@ -127,7 +126,7 @@ const Products = () => {
 
   return (
     <main id="main-content" className="products-page">
-      <Path />
+      <Path path={[{route: params.category ?? "All", link: `/products/${params.category ?? "All"}`}]} />
       <div className="container products-container-grid">
         <FiltersSidebar
           {...{
