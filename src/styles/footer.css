@@ -105,5 +105,11 @@
       grid-template-columns: 1fr 1fr;
       grid-row-gap: 40px;
     }
+    .subscribe-input {
+      width: 100%;
+    }
+    .subscribe-form {
+      align-items: center;
+    }
   }
 }
