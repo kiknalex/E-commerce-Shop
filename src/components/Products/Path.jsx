@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { capitalize } from "../Helpers/Helpers";
 const Path = ({ path }) => {
   return (
@@ -7,7 +7,7 @@ const Path = ({ path }) => {
         Home
       </Link>
       {path.map((routeInstance) => (
-        <Link to={routeInstance.link}>{capitalize(routeInstance.route)}</Link>
+        <Link key={routeInstance.route} to={routeInstance.link}>{capitalize(routeInstance.route)}</Link>
       ))}
     </div>
   );

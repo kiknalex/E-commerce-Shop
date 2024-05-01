@@ -16,7 +16,7 @@ const HomeCategory = ({ title, category }) => {
           return <CategoryProduct key={product.id} {...product} />;
         })}
       </div>
-      <Link to="/products" className="btn-pill btn-white">View All</Link>
+      <Link to="/products" className="btn-pill btn-white btn-intro">View All</Link>
     </div>
   );
 };

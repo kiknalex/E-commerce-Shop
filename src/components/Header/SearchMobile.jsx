@@ -1,7 +1,11 @@
 const SearchMobile = ({ mobileSearchShow, handleMouseClick }) => {
   return (
-    <form action="" role="search" className={`mobile-search-container ${mobileSearchShow ? "opened" : ""}`}>
-        <div className="mobile-search-close">
+    <form
+      action=""
+      role="search"
+      className={`mobile-search-container ${mobileSearchShow ? "opened" : ""}`}
+    >
+      <div className="mobile-search-close">
         <button onClick={handleMouseClick} aria-label="close" type="button">
           <i className="fa-solid fa-xmark fa-2xl"></i>
         </button>
@@ -21,7 +25,6 @@ const SearchMobile = ({ mobileSearchShow, handleMouseClick }) => {
           placeholder="Search for products..."
         />
       </div>
-      
     </form>
   );
 };

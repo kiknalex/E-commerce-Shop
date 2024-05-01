@@ -16,4 +16,5 @@
 @import "./styles/products/path.css";
 @import "./styles/products/product.css";
 @import "./styles/products/gallery.css";
+@import "./styles/cart.css";
 @import "react-range-slider-input/dist/style.css";

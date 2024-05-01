@@ -3,7 +3,6 @@
     border-radius: 30px;
     padding-inline: 45px;
     padding-block: 10px;
-    max-width: 200px;
     text-align: center;
     transition: background-color, 0.3s;
   }
@@ -43,6 +42,7 @@
   }
   .btn-intro {
     display: block;
+    width: 200px;
   }
   .btn-hamburger {
     display: none;

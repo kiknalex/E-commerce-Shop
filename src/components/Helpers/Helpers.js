@@ -7,12 +7,15 @@ const calculateSubtotal = (cart) => {
     }, 0)
 }
 
+const calculateDiscount = (cart, discount) => {
+    return Math.round((calculateSubtotal(cart) / 100 * discount));
+}
 const calculateTotal = (cart, discount, fee) => {
     let finalPrice = 0;
     finalPrice = calculateSubtotal(cart);
-    finalPrice -= (finalPrice / 100 * discount);
+    finalPrice -= calculateDiscount(cart, discount);
     finalPrice -= fee;
     return Math.round(finalPrice);
 }
 
-export {capitalize, calculateSubtotal, calculateTotal};
+export {capitalize, calculateSubtotal, calculateDiscount, calculateTotal};

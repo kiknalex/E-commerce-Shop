@@ -2,11 +2,13 @@
   .filters-container {
     width: 100%;
     padding: 10px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     border: 1px solid var(--background-color);
     border-radius: 9px;
+    height: min-content;
   }
   .filters-heading {
     display: flex;

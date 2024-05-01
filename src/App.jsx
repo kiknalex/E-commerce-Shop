@@ -5,7 +5,7 @@ import {
   RouterProvider,
   createRoutesFromElements,
   Outlet,
-  ScrollRestoration
+  ScrollRestoration,
 } from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home/Home";
@@ -14,7 +14,7 @@ import Product from "./components/Products/Product/Product";
 import PageNotFound from "./components/Misc/PageNotFound";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
+import Cart from "./components/Cart/Cart";
 function App() {
   const [cart, setCart] = useState(
     () => JSON.parse(localStorage.getItem("cart")) ?? [] // lazy initial state, load local storage.
@@ -40,14 +40,37 @@ function App() {
       setCart([...cart, newItem]);
     }
   };
+  const decreaseQuantity = (item) => {
+    const itemIdWithSize = `${item.id}-${item.size}`;
+    const existingItemIndex = cart.findIndex(
+      (cartItem) => cartItem.idWithSize === itemIdWithSize
+    );
+    if (existingItemIndex !== -1 && cart[existingItemIndex].quantity > 1) {
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity -= 1;
+      setCart(updatedCart);
+    }
+  };
 
-  const removeFromCart = (itemId) => {
-    setCart(cart.filter((item) => item.id !== itemId));
+  const increaseQuantity = (item) => {
+    const itemIdWithSize = `${item.id}-${item.size}`;
+    const existingItemIndex = cart.findIndex(
+      (cartItem) => cartItem.idWithSize === itemIdWithSize
+    );
+    if (existingItemIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity += 1;
+      setCart(updatedCart);
+    }
+  };
+
+  const removeFromCart = (itemIdWithSize) => {
+    setCart(cart.filter((item) => item.idWithSize !== itemIdWithSize));
   };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route element={<Root cart={cart} removeFromCart={removeFromCart} />}>
+      <Route element={<Root cart={cart} />}>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />}>
           <Route path=":category" element={<Products />}></Route>
@@ -56,6 +79,17 @@ function App() {
           path="/products/:category/:id"
           element={<Product addToCart={addToCart} />}
         ></Route>
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              decreaseQuantity={decreaseQuantity}
+              increaseQuantity={increaseQuantity}
+              removeFromCart={removeFromCart}
+            />
+          }
+        />
         <Route path="*" element={<PageNotFound />}></Route>
       </Route>
     )
@@ -63,10 +97,10 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-function Root({ cart, removeFromCart }) {
+function Root({ cart }) {
   return (
     <>
-      <Header cart={cart} removeFromCart={removeFromCart} />
+      <Header cart={cart} />
       <ScrollRestoration />
       <Outlet />
       <Footer />
