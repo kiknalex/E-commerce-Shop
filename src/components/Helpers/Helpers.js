@@ -3,7 +3,7 @@ const capitalize = (word) => {
 }
 const calculateSubtotal = (cart) => {
    return cart.reduce((acc, item) => {
-        return acc + item.price;
+        return acc + item.price * item.quantity;
     }, 0)
 }
 
