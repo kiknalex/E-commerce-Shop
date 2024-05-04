@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 const HamburgerMobile = ({ mobileMenuShow, handleMouseClick }) => {
   return (

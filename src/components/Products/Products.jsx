@@ -42,6 +42,7 @@ const Products = () => {
         console.error(error);
         navigate("/products");
       });
+      setActivePage(1);
   }, [params]);
 
   useEffect(() => {
