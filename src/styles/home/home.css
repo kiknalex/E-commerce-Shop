@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    max-height: 500px;
+ 
   }
   .items-line {
     display: flex;
@@ -27,18 +27,23 @@
     gap: 20px;
   }
   .items-line-img {
+    padding: 20px;
+    background-color: white;
     max-width: 300px;
-    max-height: 300px;
-    width: 20vw;
-    height: 20vw;
+
+    width: 100%;
+    height: auto;
     border-radius: 20px;
     align-self: center;
+  }
+  .product-img-container {
+    
   }
   .category-product-title {
     width: 20vw;
   }
   .category-product-price {
-    margin-top: auto;
+    
   }
   .category-hr {
     border: none;

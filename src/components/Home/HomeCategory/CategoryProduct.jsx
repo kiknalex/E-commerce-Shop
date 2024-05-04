@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const CategoryProduct = ({ title, price, category, description, image, id }) => {
   return (
     <Link to={`/products/${category}/${id}`} className="product-flex">
+      <div className="product-img-container">
       <img
         src={image}
         alt=""
@@ -10,6 +11,7 @@ const CategoryProduct = ({ title, price, category, description, image, id }) => 
         height="300"
         className="items-line-img"
       />
+      </div>
       <h3 className="title--sm category-product-title">{title}</h3>
       <p className="category-product-price text--bold text">${price}</p>
       <div className="rating">
