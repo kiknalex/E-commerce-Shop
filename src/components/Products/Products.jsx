@@ -9,7 +9,7 @@ const PRODUCTS_NUMBER = 9;
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [price, setPrice] = useState({ min: 0, max: 1000 });
+  const [price, setPrice] = useState({ min: 0, max: 1000 }); //refactor
   const [size, setSize] = useState([]);
   const [filterOptions, setFilterOptions] = useState({ price, size });
   const [isSortOpen, setIsSortOpen] = useState(false);
@@ -17,7 +17,7 @@ const Products = () => {
   const [activePage, setActivePage] = useState(1);
   const params = useParams();
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     fetch(
       `https://fakestoreapi.com/products${
@@ -65,21 +65,17 @@ const Products = () => {
       return product;
     }
     return false;
-  }
+  };
   const productsList = (products) => {
+    const startIndex = (activePage - 1) * PRODUCTS_NUMBER;
+    const endIndex = activePage * PRODUCTS_NUMBER;
     return useMemo(
       () =>
         products
           .filter(productsFilterFn)
-          .map((product, index) => {
-            const startIndex = (activePage - 1) * PRODUCTS_NUMBER;
-            const endIndex = activePage * PRODUCTS_NUMBER;
-            if (index + 1 > startIndex && index < endIndex) {
-              return (
-                  <CategoryProduct key={product.id} {...product} />
-              );
-            }
-          }),
+          .slice(startIndex, endIndex)
+          .map((product) => <CategoryProduct key={product.id} {...product} />),
+
       [products, filterOptions, activePage]
     );
   };
@@ -126,7 +122,14 @@ const Products = () => {
 
   return (
     <main id="main-content" className="products-page">
-      <Path path={[{route: params.category ?? "All", link: `/products/${params.category ?? "All"}`}]} />
+      <Path
+        path={[
+          {
+            route: params.category ?? "All",
+            link: `/products/${params.category ?? "All"}`,
+          },
+        ]}
+      />
       <div className="container products-container-grid">
         <FiltersSidebar
           {...{
@@ -205,7 +208,13 @@ const Products = () => {
           </div>
           {products && (
             <PaginationButtons
-              {...{ activePage, setActivePage, products, PRODUCTS_NUMBER, productsFilterFn }}
+              {...{
+                activePage,
+                setActivePage,
+                products,
+                PRODUCTS_NUMBER,
+                productsFilterFn,
+              }}
             />
           )}
         </div>
