@@ -13,13 +13,13 @@ const HeaderCategories = ({ dropdownShow, handleMouseIn, handleMouseOut }) => {
           <Link to="/products">Shop</Link>
         </li>
         <li>
-          <Link to="/products">Best Sellers</Link>
+          <Link to="/products/women's clothing">Best Sellers</Link>
         </li>
         <li>
-          <Link to="/products">New Arrivals</Link>
+          <Link to="/products/men's clothing">New Arrivals</Link>
         </li>
         <li>
-          <Link to="/products">Brands</Link>
+          <Link to="/products/electronics">Brands</Link>
         </li>
       </ul>
     </nav>

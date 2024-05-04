@@ -5,24 +5,24 @@ const Dropdown = ({ dropdownShow }) => {
     <div className={`dropdown-container ${dropdownShow ? "active" : ""}`}>
       <div className={`dropdown-sections-flex ${dropdownShow ? "active" : ""}`}>
         <ul className="dropdown-items-flex">
-          <li><Link to="/products">Shoes</Link></li>
-          <li><Link to="/products">T-shirts</Link></li>
-          <li><Link to="/products">Jackets</Link></li>
+          <li><Link to="/products/men's clothing">Shoes</Link></li>
+          <li><Link to="/products/women's clothing">T-shirts</Link></li>
+          <li><Link to="/products/jewelery">Jackets</Link></li>
         </ul>
         <ul className="dropdown-items-flex">
-          <li><Link to="/products">Shoes</Link></li>
-          <li><Link to="/products">T-shirts</Link></li>
-          <li><Link to="/products">Jackets</Link></li>
+          <li><Link to="/products/men's clothing">Shoes</Link></li>
+          <li><Link to="/products/women's clothing">T-shirts</Link></li>
+          <li><Link to="/products/jewelery">Jackets</Link></li>
         </ul>
         <ul className="dropdown-items-flex">
-          <li><Link to="/products">Shoes</Link></li>
-          <li><Link to="/products">T-shirts</Link></li>
-          <li><Link to="/products">Jackets</Link></li>
+          <li><Link to="/products/men's clothing">Shoes</Link></li>
+          <li><Link to="/products/women's clothing">T-shirts</Link></li>
+          <li><Link to="/products/jewelery">Jackets</Link></li>
         </ul>
         <ul className="dropdown-items-flex">
-          <li><Link to="/products">Shoes</Link></li>
-          <li><Link to="/products">T-shirts</Link></li>
-          <li><Link to="/products">Jackets</Link></li>
+          <li><Link to="/products/men's clothing">Shoes</Link></li>
+          <li><Link to="/products/women's clothing">T-shirts</Link></li>
+          <li><Link to="/products/jewelery">Jackets</Link></li>
         </ul>
       </div>
     </div>
