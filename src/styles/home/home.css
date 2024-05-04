@@ -14,12 +14,7 @@
   .home-category:first-child {
     margin-top: 60px;
   }
-  .product-flex {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
- 
-  }
+  
   .items-line {
     display: flex;
     justify-content: space-between;

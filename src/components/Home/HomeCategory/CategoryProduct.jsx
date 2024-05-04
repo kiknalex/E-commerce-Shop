@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 const CategoryProduct = ({ title, price, category, description, image, id }) => {
   return (
-    <Link to={`/products/${category}/${id}`} className="product-flex">
+    <Link to={`/products/${category}/${id}`}>
       <div className="product-img-container">
       <img
         src={image}
         alt=""
-        width="300"
-        height="300"
+        
+        
         className="items-line-img"
       />
       </div>
