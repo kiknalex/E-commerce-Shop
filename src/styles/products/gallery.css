@@ -11,14 +11,17 @@
     order: -1;
   }
   .thumbnail-main {
-    width: 400px;
-    height: 530px;
+    height: 100%;
+    width: auto;
+    max-width: 600px;
     border-radius: 9px;
+    object-fit: cover;
   }
   .thumbnail-small {
     flex: 1;
     border-radius: 9px;
     border: 1px solid transparent;
+    object-fit: cover;
   }
   .thumbnail-button {
     display: contents;
@@ -30,7 +33,6 @@
   @media (max-width: 1060px) {
     .gallery {
       flex-direction: column;
-      width: 100%;
       height: auto;
     }
     .thumbnails-gallery {
@@ -39,11 +41,18 @@
       gap: 0;
     }
     .thumbnail-main {
-      width: 100%;
       order: -1;
+      margin: auto;
+      width: 100%;
     }
     .thumbnail-small {
+      object-fit: cover;
       width: 33%;
+      max-width: 200px;
+      height: auto;
+    }
+    .thumbnails-gallery {
+      justify-content: center;
     }
   }
 }
