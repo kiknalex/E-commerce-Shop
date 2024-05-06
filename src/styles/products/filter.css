@@ -69,6 +69,7 @@
 
   @media (max-width: 1060px) {
     .filters-container {
+      visibility: hidden;
       background-color: white;
       position: fixed;
       width: 320px;
@@ -77,11 +78,12 @@
       top: 0;
       bottom: 0;
       translate: -320px;
-      transition: translate 0.3s;
+      transition: visibility 0.3s, translate 0.3s;
       z-index: 200;
       padding: 20px;
     }
     .filters-container.opened {
+      visibility: visible;
       display: flex;
       translate: 0px;
     }
