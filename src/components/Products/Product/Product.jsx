@@ -7,6 +7,11 @@ import ProductInfoTabs from "./ProductInfoTabs";
 import HomeCategory from "../../Home/HomeCategory/HomeCategory";
 const Product = ({ addToCart }) => {
   const [productDetails, setProductDetails] = useState({});
+  const [sizeWarning, setSizeWarning] = useState(false);
+
+  const handleSizeWarning = (bool) => {
+    setSizeWarning(bool);
+  };
   const params = useParams();
   const navigate = useNavigate();
   useEffect(() => {
@@ -40,7 +45,12 @@ const Product = ({ addToCart }) => {
               ]}
             />
           )}
-          <ProductDescription details={productDetails} addToCart={addToCart} />
+          <ProductDescription
+            details={productDetails}
+            addToCart={addToCart}
+            sizeWarning={sizeWarning}
+            handleSizeWarning={handleSizeWarning}
+          />
         </div>
         <ProductInfoTabs details={productDetails} />
         <HomeCategory title="You might also like" category={params.category} />

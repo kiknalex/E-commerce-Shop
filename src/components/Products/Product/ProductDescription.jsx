@@ -2,11 +2,17 @@ import { useState } from "react";
 import SizeSelector from "../SizeSelector";
 import StarRating from "../../Home/Reviews/StarRating";
 import AddToCart from "./AddToCart";
-const ProductDescription = ({ details, addToCart }) => {
+const ProductDescription = ({
+  details,
+  addToCart,
+  sizeWarning,
+  handleSizeWarning,
+}) => {
   const [selectedSize, setSelectedSize] = useState("");
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
+    handleSizeWarning(false);
   };
 
   const isSizeActive = (size) => {
@@ -24,12 +30,17 @@ const ProductDescription = ({ details, addToCart }) => {
         <p className="text--lg text--bold text--marginless">${details.price}</p>
         <p className="text--gray text--marginless">{details.description}</p>
       </div>
-      <div className="filter-sizes">
+      <div className={`filter-sizes ${sizeWarning && "required"}`}>
         <h2 className="text--sm text--gray">Choose size</h2>
         <SizeSelector
           handleSizeClick={handleSizeClick}
           isSizeActive={isSizeActive}
         />
+        {sizeWarning && (
+          <span role="alert" className="error-text">
+            Please select a size.
+          </span>
+        )}
       </div>
       <AddToCart
         initialQuantity={1}
@@ -37,6 +48,7 @@ const ProductDescription = ({ details, addToCart }) => {
         addToCart={addToCart}
         size={selectedSize}
         clearSize={() => handleSizeClick("")}
+        handleSizeWarning={handleSizeWarning}
       />
     </section>
   );

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import QuantityControls from "./QuantityControls";
 
-const AddToCart = ({ initialQuantity, item, addToCart, size, clearSize }) => {
+const AddToCart = ({
+  initialQuantity,
+  item,
+  addToCart,
+  size,
+  clearSize,
+  handleSizeWarning,
+}) => {
   const [quantity, setQuantity] = useState(initialQuantity || 1);
 
   const handleDecrease = () => {
@@ -15,6 +22,7 @@ const AddToCart = ({ initialQuantity, item, addToCart, size, clearSize }) => {
   };
   const handleAddClick = () => {
     if (size.length < 1) {
+      handleSizeWarning(true);
       return;
     }
     addToCart(item, quantity, size);
