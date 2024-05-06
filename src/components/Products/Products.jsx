@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import CategoryProduct from "../Home/HomeCategory/CategoryProduct";
 import FiltersSidebar from "./FiltersSidebar";
 import PaginationButtons from "./PaginationButtons";
@@ -42,7 +42,7 @@ const Products = () => {
         console.error(error);
         navigate("/products");
       });
-      setActivePage(1);
+    setActivePage(1);
   }, [params]);
 
   useEffect(() => {

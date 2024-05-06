@@ -31,7 +31,13 @@ const ProductDescription = ({ details, addToCart }) => {
           isSizeActive={isSizeActive}
         />
       </div>
-      <AddToCart initialQuantity={1}  item={details} addToCart={addToCart} size={selectedSize} clearSize={() => handleSizeClick("")}  />
+      <AddToCart
+        initialQuantity={1}
+        item={details}
+        addToCart={addToCart}
+        size={selectedSize}
+        clearSize={() => handleSizeClick("")}
+      />
     </section>
   );
 };

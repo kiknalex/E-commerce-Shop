@@ -23,7 +23,11 @@ const Product = ({ addToCart }) => {
 
   return (
     <>
-      <Path path={[{route: params.category, link: `/products/${params.category}`}]} />
+      <Path
+        path={[
+          { route: params.category, link: `/products/${params.category}` },
+        ]}
+      />
       <main id="main-content" className="product-page container">
         <div className="product-container">
           {productDetails.image && (

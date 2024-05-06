@@ -10,7 +10,7 @@ const Header = ({ cart, removeFromCart }) => {
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
   const handleMouseClick = (setStateElementShow) => {
     setStateElementShow((prevState) => !prevState);
-    document.body.classList.toggle('body-noscroll');
+    document.body.classList.toggle("body-noscroll");
   };
 
   const handleMouseIn = (e) => {
