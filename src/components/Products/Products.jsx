@@ -9,7 +9,7 @@ const PRODUCTS_NUMBER = 9;
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [price, setPrice] = useState({ min: 0, max: 1000 }); //refactor
+  const [price, setPrice] = useState({ min: 0, max: 1000 });
   const [size, setSize] = useState([]);
   const [filterOptions, setFilterOptions] = useState({ price, size });
   const [isSortOpen, setIsSortOpen] = useState(false);
@@ -34,6 +34,7 @@ const Products = () => {
             return {
               ...product,
               size: ["small", "medium", "big"][Math.floor(Math.random() * 3)], // add random size to the product list for demonstration purposes
+              price: product.price.toFixed(2)
             };
           })
         );

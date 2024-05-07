@@ -18,7 +18,7 @@ const Product = ({ addToCart }) => {
     fetch(`https://fakestoreapi.com/products/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
-        setProductDetails(data);
+        setProductDetails({ ...data, price: data.price.toFixed(2) });
       })
       .catch((error) => {
         navigate("/products");
