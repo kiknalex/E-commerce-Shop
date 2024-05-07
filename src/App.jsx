@@ -15,6 +15,7 @@ import PageNotFound from "./components/Misc/PageNotFound";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Cart from "./components/Cart/Cart";
+import UnderConstruction from "./components/Misc/UnderConstruction";
 function App() {
   const [cart, setCart] = useState(
     () => JSON.parse(localStorage.getItem("cart")) ?? [] // lazy initial state, load local storage.
@@ -90,6 +91,7 @@ function App() {
             />
           }
         />
+        <Route path="/underconstruction" element={<UnderConstruction />} />
         <Route path="*" element={<PageNotFound />}></Route>
       </Route>
     )

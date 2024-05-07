@@ -1,6 +1,6 @@
 import SocMediaIcons from "../Misc/SocMediaIcons";
 import FooterSubscribe from "./FooterSubscribe";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
@@ -24,16 +24,16 @@ const Footer = () => {
                 <h3 className="title--sm title--spaced">Company</h3>
                 <ul className="links-list text--gray">
                   <li>
-                    <a href="#">About</a>
+                    <Link to="/underconstruction">About</Link>
                   </li>
                   <li>
-                    <a href="#">Features</a>
+                    <Link to="/underconstruction">Features</Link>
                   </li>
                   <li>
-                    <a href="#">Works</a>
+                    <Link to="/underconstruction">Works</Link>
                   </li>
                   <li>
-                    <a href="#">Career</a>
+                    <Link to="/underconstruction">Career</Link>
                   </li>
                 </ul>
               </div>
@@ -41,16 +41,16 @@ const Footer = () => {
                 <h3 className="title--sm title--spaced">Help</h3>
                 <ul className="links-list text--gray">
                   <li>
-                    <a href="#">Customer Support</a>
+                    <Link to="/underconstruction">Customer Support</Link>
                   </li>
                   <li>
-                    <a href="#">Delivery Details</a>
+                    <Link to="/underconstruction">Delivery Details</Link>
                   </li>
                   <li>
-                    <a href="#">Terms & Conditions</a>
+                    <Link to="/underconstruction">Terms & Conditions</Link>
                   </li>
                   <li>
-                    <a href="#">Privacy Policy</a>
+                    <Link to="/underconstruction">Privacy Policy</Link>
                   </li>
                 </ul>
               </div>
@@ -58,16 +58,16 @@ const Footer = () => {
                 <h3 className="title--sm title--spaced">FAQ</h3>
                 <ul className="links-list text--gray">
                   <li>
-                    <a href="#">Account</a>
+                    <Link to="/underconstruction">Account</Link>
                   </li>
                   <li>
-                    <a href="#">Manage Deliveries</a>
+                    <Link to="/underconstruction">Manage Deliveries</Link>
                   </li>
                   <li>
-                    <a href="#">Orders</a>
+                    <Link to="/underconstruction">Orders</Link>
                   </li>
                   <li>
-                    <a href="#">Payments</a>
+                    <Link to="/underconstruction">Payments</Link>
                   </li>
                 </ul>
               </div>
@@ -75,16 +75,16 @@ const Footer = () => {
                 <h3 className="title--sm title--spaced">Resources</h3>
                 <ul className="links-list text--gray">
                   <li>
-                    <a href="#">Free eBooks</a>
+                    <Link to="/underconstruction">Free eBooks</Link>
                   </li>
                   <li>
-                    <a href="#">Development tutorial</a>
+                    <Link to="/underconstruction">Development tutorial</Link>
                   </li>
                   <li>
-                    <a href="#">How to - Blog</a>
+                    <Link to="/underconstruction">How to - Blog</Link>
                   </li>
                   <li>
-                    <a href="#">Youtube Playlist</a>
+                    <Link to="/underconstruction">Youtube Playlist</Link>
                   </li>
                 </ul>
               </div>
